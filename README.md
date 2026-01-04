@@ -109,18 +109,21 @@ AIDA/
 
 This project is configured for automatic deployment to GitHub Pages. When you push to the `main` branch, GitHub Actions will automatically build and deploy the project.
 
-#### Initial Setup:
+#### Initial Setup (REQUIRED - Do this first!):
 
-**Important**: Before the first deployment, you need to enable GitHub Pages manually:
+**⚠️ CRITICAL**: You MUST enable GitHub Pages BEFORE running the workflow:
 
-1. Go to your repository settings on GitHub
-2. Navigate to "Pages" in the left sidebar
-3. Under "Source", select "GitHub Actions" (not "Deploy from a branch")
-4. Click "Save"
+1. Go to: `https://github.com/[your-username]/AIDA/settings/pages`
+2. Under "Source", select **"GitHub Actions"** (NOT "Deploy from a branch")
+3. Click **"Save"**
+4. Wait a few seconds for GitHub to initialize Pages
 
-**Why manual setup?**: The workflow needs Pages to be enabled first before it can deploy. The `configure-pages` action requires additional permissions that may not be available in all repositories.
+**Why is this required?**: GitHub Pages must be enabled and configured to use "GitHub Actions" as the source before the workflow can deploy. The workflow cannot enable Pages automatically due to permission restrictions.
 
-After enabling Pages, the workflow will automatically deploy on every push to `main` branch.
+**After enabling Pages:**
+- Push your code to `main` branch
+- The workflow will automatically build and deploy
+- Your site will be live at: `https://[your-username].github.io/AIDA/`
 
 #### Deployment URL:
 
