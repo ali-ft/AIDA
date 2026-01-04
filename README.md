@@ -116,6 +116,18 @@ This project is configured for automatic deployment to GitHub Pages. When you pu
 3. Under "Source", select "GitHub Actions"
 4. The workflow will automatically deploy on every push to `main`
 
+#### Deployment URL:
+
+After the first successful deployment, your site will be available at:
+```
+https://[your-username].github.io/[repository-name]/
+```
+
+For example, if your username is `johndoe` and repository name is `AIDA`:
+```
+https://johndoe.github.io/AIDA/
+```
+
 #### Custom Domain (Optional):
 
 If you want to use a custom domain:
@@ -124,9 +136,7 @@ If you want to use a custom domain:
 2. Update the workflow file (`.github/workflows/deploy.yml`) to set `VITE_BASE_PATH: /` instead of using the repository name
 3. Configure your DNS settings to point to GitHub Pages
 
-The site will be available at:
-- With repository name: `https://[your-username].github.io/[repository-name]/`
-- With custom domain: `https://[your-domain.com]`
+The site will be available at: `https://[your-domain.com]`
 
 ### Other Hosting Services
 
