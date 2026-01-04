@@ -6,14 +6,15 @@
 
 **This is the most important step. The workflow will fail without this.**
 
-1. Go to your repository on GitHub
+1. Go to your repository on GitHub: `https://github.com/[your-username]/AIDA/settings/pages`
 2. Click on **Settings** (top menu)
 3. Click on **Pages** (left sidebar)
-4. Under **"Source"**, select **"GitHub Actions"** (NOT "Deploy from a branch")
-5. Click **"Save"**
-6. Wait 10-20 seconds for GitHub to initialize Pages
+4. Under **"Source"**, select **"Deploy from a branch"**
+5. Select branch: **`gh-pages`** (this will be created automatically)
+6. Select folder: **`/ (root)`**
+7. Click **"Save"**
 
-**You should see a message like: "Your site is ready to be published at https://[username].github.io/AIDA/"**
+**Note**: The workflow will automatically create the `gh-pages` branch on first run. After the first successful deployment, your site will be live!
 
 ### Step 2: Push Your Code
 

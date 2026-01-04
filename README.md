@@ -114,15 +114,16 @@ This project is configured for automatic deployment to GitHub Pages. When you pu
 **⚠️ CRITICAL**: You MUST enable GitHub Pages BEFORE running the workflow:
 
 1. Go to: `https://github.com/[your-username]/AIDA/settings/pages`
-2. Under "Source", select **"GitHub Actions"** (NOT "Deploy from a branch")
-3. Click **"Save"**
-4. Wait a few seconds for GitHub to initialize Pages
+2. Under "Source", select **"Deploy from a branch"**
+3. Select branch: **`gh-pages`** (will be created automatically on first deploy)
+4. Select folder: **`/ (root)`**
+5. Click **"Save"**
 
-**Why is this required?**: GitHub Pages must be enabled and configured to use "GitHub Actions" as the source before the workflow can deploy. The workflow cannot enable Pages automatically due to permission restrictions.
+**Note**: The workflow will automatically create the `gh-pages` branch on the first successful deployment.
 
 **After enabling Pages:**
 - Push your code to `main` branch
-- The workflow will automatically build and deploy
+- The workflow will automatically build and deploy to `gh-pages` branch
 - Your site will be live at: `https://[your-username].github.io/AIDA/`
 
 #### Deployment URL:
