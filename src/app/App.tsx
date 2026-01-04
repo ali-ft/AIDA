@@ -6,9 +6,12 @@ import { ForBusinesses } from './pages/ForBusinesses';
 import { AboutUs } from './pages/AboutUs';
 import { Contact } from './pages/Contact';
 
+// Get base path from environment variable or use root
+const basePath = (import.meta as any).env?.BASE_URL || '/';
+
 export default function App() {
   return (
-    <Router>
+    <Router basename={basePath}>
       <div className="min-h-screen bg-white">
         <Navigation />
         

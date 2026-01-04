@@ -1,113 +1,136 @@
-# پروژه AIDA - آموزش هوش مصنوعی
+# AIDA - AI Training Project
 
-این یک پروژه React + TypeScript + Vite برای وب‌سایت آموزش هوش مصنوعی است.
+A React + TypeScript + Vite project for an AI training website.
 
-## پیش‌نیازها
+## Prerequisites
 
-⚠️ **مهم**: این پروژه به Node.js نسخه **18 یا بالاتر** نیاز دارد.
+⚠️ **Important**: This project requires Node.js version **18 or higher**.
 
-برای بررسی نسخه Node.js خود:
+To check your Node.js version:
 ```bash
 node --version
 ```
 
-اگر نسخه Node.js شما قدیمی است، می‌توانید از [nvm](https://github.com/nvm-sh/nvm) برای نصب نسخه جدید استفاده کنید:
+If your Node.js version is outdated, you can use [nvm](https://github.com/nvm-sh/nvm) to install a new version:
 ```bash
 nvm install 18
 nvm use 18
 ```
 
-- npm یا pnpm یا yarn
+- npm, pnpm, or yarn
 
-## نصب وابستگی‌ها
+## Installation
 
 ```bash
 npm install
-# یا
+# or
 pnpm install
-# یا
+# or
 yarn install
 ```
 
-## اجرای پروژه در حالت توسعه
+## Development
 
 ```bash
 npm run dev
-# یا
+# or
 pnpm dev
-# یا
+# or
 yarn dev
 ```
 
-پس از اجرا، پروژه در آدرس `http://localhost:5173` در دسترس خواهد بود.
+After running, the project will be available at `http://localhost:5173`.
 
-## ساخت نسخه Production
+## Build
 
 ```bash
 npm run build
-# یا
+# or
 pnpm build
-# یا
+# or
 yarn build
 ```
 
-فایل‌های ساخته شده در پوشه `dist` قرار می‌گیرند.
+The built files will be in the `dist` folder.
 
-## پیش‌نمایش نسخه Production
+## Preview Production Build
 
 ```bash
 npm run preview
-# یا
+# or
 pnpm preview
-# یا
+# or
 yarn preview
 ```
 
-## نکات مهم
+## Important Notes
 
-### تصاویر Figma
+### Figma Assets
 
-این پروژه از assetهای Figma استفاده می‌کند. برای اجرای صحیح پروژه، باید تصاویر زیر را در پوشه `public/assets` قرار دهید:
+This project uses Figma assets. To run the project correctly, you need to place the following images in the `public/assets` folder:
 
-- `3af554a36bafc4ceccaab5764d511d4748d7dd8c.png` - تصویر Hero
-- `443853629c7abcb2010de3cdc327eb4d36d43b0e.png` - لوگو
-- `c141912995381c315b691576bd3aa351ab3f89d5.png` - لوگوی Leiden
-- `aec424cdf43e71558b5f42a2cfb884bc1ad5e7c5.png` - لوگوی Birmingham
-- `da9036b94cc997a7ca2c9204f489fbebe8adc753.png` - لوگوی Maastricht
+- `3af554a36bafc4ceccaab5764d511d4748d7dd8c.png` - Hero image
+- `443853629c7abcb2010de3cdc327eb4d36d43b0e.png` - Logo
+- `c141912995381c315b691576bd3aa351ab3f89d5.png` - Leiden logo
+- `aec424cdf43e71558b5f42a2cfb884bc1ad5e7c5.png` - Birmingham logo
+- `da9036b94cc997a7ca2c9204f489fbebe8adc753.png` - Maastricht logo
 
-می‌توانید این تصاویر را از Figma export کنید و در پوشه `public/assets` قرار دهید.
+You can export these images from Figma and place them in the `public/assets` folder.
 
-## ساختار پروژه
+## Project Structure
 
 ```
 AIDA/
 ├── src/
 │   ├── app/
-│   │   ├── components/     # کامپوننت‌های React
-│   │   └── pages/          # صفحات اصلی
-│   ├── styles/             # فایل‌های CSS و Tailwind
-│   └── main.tsx            # نقطه ورود برنامه
-├── public/                 # فایل‌های استاتیک
-├── index.html              # فایل HTML اصلی
-├── vite.config.ts          # تنظیمات Vite
-└── package.json            # وابستگی‌های پروژه
+│   │   ├── components/     # React components
+│   │   └── pages/          # Main pages
+│   ├── styles/             # CSS and Tailwind files
+│   └── main.tsx            # Application entry point
+├── public/                 # Static files
+├── index.html              # Main HTML file
+├── vite.config.ts          # Vite configuration
+└── package.json            # Project dependencies
 ```
 
-## تکنولوژی‌های استفاده شده
+## Technologies Used
 
-- **React 18** - کتابخانه UI
-- **TypeScript** - زبان برنامه‌نویسی
-- **Vite** - ابزار build و dev server
-- **Tailwind CSS** - فریمورک CSS
-- **React Router** - مدیریت routing
-- **Radix UI** - کامپوننت‌های UI
-- **Motion** - انیمیشن‌ها
+- **React 18** - UI library
+- **TypeScript** - Programming language
+- **Vite** - Build tool and dev server
+- **Tailwind CSS** - CSS framework
+- **React Router** - Routing management
+- **Radix UI** - UI components
+- **Motion** - Animations
 
-## دیپلوی
+## Deployment
 
-این پروژه را می‌توانید روی هر سرویس hosting استاتیک دیپلوی کنید:
+### GitHub Pages
+
+This project is configured for automatic deployment to GitHub Pages. When you push to the `main` branch, GitHub Actions will automatically build and deploy the project.
+
+#### Initial Setup:
+
+1. Go to your repository settings on GitHub
+2. Navigate to "Pages" in the left sidebar
+3. Under "Source", select "GitHub Actions"
+4. The workflow will automatically deploy on every push to `main`
+
+#### Custom Domain (Optional):
+
+If you want to use a custom domain:
+
+1. Add a `CNAME` file in the `public` folder with your domain name (e.g., `example.com`)
+2. Update the workflow file (`.github/workflows/deploy.yml`) to set `VITE_BASE_PATH: /` instead of using the repository name
+3. Configure your DNS settings to point to GitHub Pages
+
+The site will be available at:
+- With repository name: `https://[your-username].github.io/[repository-name]/`
+- With custom domain: `https://[your-domain.com]`
+
+### Other Hosting Services
+
+You can also deploy this project to any static hosting service:
 
 - **Vercel**: `vercel deploy`
 - **Netlify**: `netlify deploy`
-- **GitHub Pages**: بعد از build، محتویات پوشه `dist` را آپلود کنید
-

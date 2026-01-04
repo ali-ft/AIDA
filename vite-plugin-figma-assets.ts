@@ -16,10 +16,12 @@ export function figmaAssets(): Plugin {
       if (id.startsWith('\0figma-asset:')) {
         // Extract the filename
         const filename = id.replace('\0figma-asset:', '')
+        // Get base path from environment variable or use root
+        const basePath = process.env.VITE_BASE_PATH || '/'
         // Return a module that exports the asset path
         // For now, we'll use a placeholder. In production, you'd want to
         // actually fetch or reference the real assets
-        return `export default '/assets/${filename}'`
+        return `export default '${basePath}assets/${filename}'`
       }
       return null
     },
