@@ -1,13 +1,14 @@
 import { motion } from "motion/react";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export function Contact() {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    company: "",
-    phone: "",
     message: ""
   });
 
@@ -15,7 +16,7 @@ export function Contact() {
     e.preventDefault();
     // Handle form submission (mock for now)
     alert("Thank you for your message! We'll get back to you soon.");
-    setFormData({ name: "", email: "", company: "", phone: "", message: "" });
+    setFormData({ name: "", email: "", message: "" });
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -35,163 +36,162 @@ export function Contact() {
     {
       icon: Phone,
       title: "Phone",
-      value: "+31 20 123 4567",
-      link: "tel:+31201234567"
+      value: "+971 50 563 2446",
+      link: "tel:+971505632446"
     },
     {
       icon: MapPin,
       title: "Address",
-      value: "Amsterdam, Netherlands",
+      value: "Dubai, UAE",
       link: null
     }
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50">
-      {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1683117927786-f146451082fb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb250YWN0JTIwc3VwcG9ydCUyMGVtYWlsfGVufDF8fHx8MTc2NzI2NjAxMHww&ixlib=rb-4.1.0&q=80&w=1080"
-            alt="Contact Us"
-            className="w-full h-full object-cover"
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-cyan-50/30 to-purple-50/50 pt-16 sm:pt-20 relative overflow-hidden">
+      {/* Enhanced Background with Mesh Gradient */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Animated Gradient Orbs */}
+        <motion.div
+          animate={{
+            x: [0, 100, 0],
+            y: [0, 50, 0],
+            scale: [1, 1.2, 1],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-br from-cyan-400/30 via-purple-400/20 to-pink-400/30 rounded-full blur-3xl"
+        ></motion.div>
+        <motion.div
+          animate={{
+            x: [0, -80, 0],
+            y: [0, 60, 0],
+            scale: [1, 1.3, 1],
+          }}
+          transition={{
+            duration: 25,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1
+          }}
+          className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-blue-400/25 via-indigo-400/20 to-purple-400/25 rounded-full blur-3xl"
+        ></motion.div>
+        <motion.div
+          animate={{
+            x: [0, 50, 0],
+            y: [0, -40, 0],
+            scale: [1, 1.1, 1],
+          }}
+          transition={{
+            duration: 18,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 0.5
+          }}
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gradient-to-r from-cyan-300/15 via-purple-300/10 to-pink-300/15 rounded-full blur-3xl"
+        ></motion.div>
+      </div>
+
+      {/* Mesh Gradient Overlay */}
+      <div className="absolute inset-0 opacity-40 pointer-events-none" style={{
+        backgroundImage: `
+          radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.15) 0px, transparent 50%),
+          radial-gradient(at 100% 0%, rgba(139, 92, 246, 0.15) 0px, transparent 50%),
+          radial-gradient(at 100% 100%, rgba(236, 72, 153, 0.15) 0px, transparent 50%),
+          radial-gradient(at 0% 100%, rgba(6, 182, 212, 0.15) 0px, transparent 50%)
+        `,
+      }}></div>
+
+      {/* Animated Grid Pattern */}
+      <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `
+            linear-gradient(30deg, transparent 40%, rgba(59, 130, 246, 0.8) 50%, transparent 60%),
+            linear-gradient(-30deg, transparent 40%, rgba(139, 92, 246, 0.8) 50%, transparent 60%)
+          `,
+          backgroundSize: '80px 80px',
+        }}></div>
+      </div>
+
+      {/* Floating Particles Effect */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {[...Array(6)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-2 h-2 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-full opacity-20"
+            style={{
+              left: `${20 + i * 15}%`,
+              top: `${10 + i * 12}%`,
+            }}
+            animate={{
+              y: [0, -30, 0],
+              opacity: [0.2, 0.4, 0.2],
+              scale: [1, 1.5, 1],
+            }}
+            transition={{
+              duration: 3 + i * 0.5,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: i * 0.3,
+            }}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-gray-900/90 via-gray-900/70 to-gray-900/50"></div>
-        </div>
-        
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        ))}
+      </div>
+
+      {/* Contact Form Section - At the top */}
+      <section className="py-4 sm:py-6 relative z-10">
+        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.5 }}
+            className="bg-white/95 backdrop-blur-sm p-6 sm:p-8 rounded-3xl shadow-2xl border border-white/20"
           >
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl text-white mb-6">
-              Get in Touch
-            </h1>
-            <p className="text-xl sm:text-2xl text-gray-300 max-w-3xl mx-auto">
-              Let's discuss how AIDA can help transform your organization with AI training
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Contact Info Cards */}
-      <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 -mt-24 relative z-10">
-            {contactInfo.map((info, index) => {
-              const Icon = info.icon;
-              return (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  className="bg-white p-8 rounded-3xl shadow-xl text-center"
-                >
-                  <div className="w-16 h-16 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Icon className="w-8 h-8 text-white" />
-                  </div>
-                  <h3 className="text-xl mb-2">{info.title}</h3>
-                  {info.link ? (
-                    <a href={info.link} className="text-gray-600 hover:text-purple-600 transition-colors">
-                      {info.value}
-                    </a>
-                  ) : (
-                    <p className="text-gray-600">{info.value}</p>
-                  )}
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* Contact Form Section */}
-      <section className="py-16 sm:py-24">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="bg-white p-8 sm:p-12 rounded-3xl shadow-2xl"
-          >
-            <h2 className="text-4xl sm:text-5xl text-center mb-4">
+            <h2 className="text-2xl sm:text-3xl text-center mb-2 font-bold">
               Send Us a Message
             </h2>
-            <p className="text-gray-600 text-center mb-8">
+            <p className="text-sm sm:text-base text-gray-600 text-center mb-6">
               Fill out the form below and we'll get back to you within 24 hours
             </p>
 
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm mb-2">
-                    Full Name *
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-600"
-                    placeholder="John Doe"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="email" className="block text-sm mb-2">
-                    Email Address *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-600"
-                    placeholder="john@company.com"
-                  />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="company" className="block text-sm mb-2">
-                    Company Name
-                  </label>
-                  <input
-                    type="text"
-                    id="company"
-                    name="company"
-                    value={formData.company}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-600"
-                    placeholder="Your Company"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="phone" className="block text-sm mb-2">
-                    Phone Number
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-600"
-                    placeholder="+31 20 123 4567"
-                  />
-                </div>
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div>
+                <label htmlFor="name" className="block text-sm font-medium mb-1.5">
+                  Full Name *
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-2.5 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-600"
+                  placeholder="John Doe"
+                />
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm mb-2">
+                <label htmlFor="email" className="block text-sm font-medium mb-1.5">
+                  Email Address *
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-2.5 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-600"
+                  placeholder="john@company.com"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium mb-1.5">
                   Message *
                 </label>
                 <textarea
@@ -200,20 +200,53 @@ export function Contact() {
                   value={formData.message}
                   onChange={handleChange}
                   required
-                  rows={6}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-600 resize-none"
+                  rows={4}
+                  className="w-full px-4 py-2.5 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-600 resize-none"
                   placeholder="Tell us about your AI training needs..."
                 ></textarea>
               </div>
 
               <button
                 type="submit"
-                className="w-full px-8 py-4 bg-gradient-to-r from-cyan-600 to-purple-600 text-white rounded-xl hover:shadow-2xl transition-all text-lg flex items-center justify-center gap-2"
+                className="w-full px-6 py-3 bg-gradient-to-r from-cyan-600 to-purple-600 hover:from-cyan-700 hover:to-purple-700 text-white rounded-xl hover:shadow-2xl active:scale-95 transition-all text-base font-medium flex items-center justify-center gap-2 cursor-pointer"
               >
-                Send Message <Send className="w-5 h-5" />
+                Send Message <Send className="w-4 h-4" />
               </button>
             </form>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Contact Info Cards - Below the form */}
+      <section className="py-8 sm:py-12 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+            {contactInfo.map((info, index) => {
+              const Icon = info.icon;
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="bg-white p-6 sm:p-8 rounded-2xl shadow-xl text-center hover:shadow-2xl transition-shadow"
+                >
+                  <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <Icon className="w-7 h-7 sm:w-8 sm:h-8 text-white" />
+                  </div>
+                  <h3 className="text-lg sm:text-xl mb-2 font-semibold">{info.title}</h3>
+                  {info.link ? (
+                    <a href={info.link} className="text-base sm:text-lg text-gray-600 hover:text-purple-600 transition-colors">
+                      {info.value}
+                    </a>
+                  ) : (
+                    <p className="text-base sm:text-lg text-gray-600">{info.value}</p>
+                  )}
+                </motion.div>
+              );
+            })}
+          </div>
         </div>
       </section>
 
@@ -229,7 +262,7 @@ export function Contact() {
               Visit Our Office
             </h2>
             <p className="text-xl text-white/90 mb-8">
-              We're located in the heart of Amsterdam, Netherlands
+              We're located in the heart of Dubai, UAE
             </p>
             <div className="bg-white/10 backdrop-blur-sm p-8 rounded-3xl max-w-2xl mx-auto">
               <p className="text-white text-lg mb-4">

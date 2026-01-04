@@ -1,8 +1,12 @@
 import { motion } from "motion/react";
 import { Building2, Users, TrendingUp, Target, CheckCircle, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 export function ForBusinesses() {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
   const benefits = [
     {
       icon: Users,
@@ -34,13 +38,12 @@ export function ForBusinesses() {
     "Progress tracking and analytics dashboard",
     "Certificate programs for team members",
     "Ongoing support and resources",
-    "Integration with existing systems"
   ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50">
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
+      <section className="relative py-12 sm:py-16 lg:py-20 overflow-hidden">
         <div className="absolute inset-0">
           <img
             src="https://images.unsplash.com/photo-1758518731706-be5d5230e5a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMG1lZXRpbmclMjBjb3Jwb3JhdGV8ZW58MXx8fHwxNzY3MjY2MDA5fDA&ixlib=rb-4.1.0&q=80&w=1080"
@@ -56,15 +59,15 @@ export function ForBusinesses() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl text-white mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white mb-4 sm:mb-6 px-2">
               Transform Your Business with AI
             </h1>
-            <p className="text-xl sm:text-2xl text-gray-300 max-w-3xl mx-auto mb-8">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 max-w-3xl mx-auto mb-6 sm:mb-8 px-2">
               Equip your team with the AI skills they need to drive innovation, increase productivity, and stay ahead of the competition.
             </p>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-cyan-600 to-purple-600 text-white rounded-xl hover:shadow-2xl transition-all text-lg"
+              className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-cyan-600 to-purple-600 hover:from-cyan-700 hover:to-purple-700 text-white rounded-xl hover:shadow-2xl active:scale-95 transition-all text-base sm:text-lg cursor-pointer"
             >
               Get Started <ArrowRight className="w-5 h-5" />
             </Link>
@@ -169,7 +172,7 @@ export function ForBusinesses() {
             </p>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 px-10 py-4 bg-gradient-to-r from-cyan-600 to-purple-600 text-white rounded-xl hover:shadow-2xl transition-all text-lg"
+              className="inline-flex items-center gap-2 px-10 py-4 bg-gradient-to-r from-cyan-600 to-purple-600 hover:from-cyan-700 hover:to-purple-700 text-white rounded-xl hover:shadow-2xl active:scale-95 transition-all text-lg cursor-pointer"
             >
               Book a Demo <ArrowRight className="w-5 h-5" />
             </Link>

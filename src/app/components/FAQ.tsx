@@ -208,7 +208,7 @@ export function FAQ() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-white text-purple-600 px-8 py-3 rounded-xl hover:shadow-xl transition-all"
+            className="bg-white text-purple-600 px-8 py-3 rounded-xl hover:shadow-xl hover:bg-gray-50 active:scale-95 transition-all cursor-pointer"
             onClick={() => navigate('/contact')}
           >
             Contact Us

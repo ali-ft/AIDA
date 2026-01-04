@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const getAssetPath = (path: string) => {
   const baseUrl = (import.meta as any).env?.BASE_URL || '/';
@@ -10,7 +10,6 @@ const getAssetPath = (path: string) => {
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
-  const location = useLocation();
 
   const navItems = [
     { label: "For Businesses", path: "/businesses" },
@@ -18,31 +17,19 @@ export function Navigation() {
     { label: "Contact", path: "/contact" },
   ];
 
-  const handleScrollToModules = () => {
-    if (location.pathname !== '/') {
-      navigate('/');
-      setTimeout(() => {
-        const element = document.getElementById('modules');
-        element?.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
-    } else {
-      const element = document.getElementById('modules');
-      element?.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3">
-            <img src={getAssetPath("assets/aida-logo.png")} alt="AIDA AI" className="h-12 w-12" />
+          <Link to="/" className="flex items-center gap-2 sm:gap-3">
+            <img src={getAssetPath("assets/aida-logo.png")} alt="AIDA AI" className="h-10 w-10 sm:h-12 sm:w-12" />
             <div>
-              <div className="text-xl font-bold bg-gradient-to-r from-cyan-600 to-purple-600 bg-clip-text text-transparent">
+              <div className="text-lg sm:text-xl font-bold bg-gradient-to-r from-cyan-600 to-purple-600 bg-clip-text text-transparent">
                 AIDA AI
               </div>
-              <div className="text-xs text-gray-600">
+              <div className="text-[10px] sm:text-xs text-gray-600 hidden xs:block">
                 International AI Training Center
               </div>
             </div>
@@ -59,14 +46,14 @@ export function Navigation() {
                 {item.label}
               </Link>
             ))}
-            <button onClick={() => navigate('/contact')} className="px-6 py-2.5 bg-gradient-to-r from-cyan-600 to-purple-600 text-white rounded-lg hover:shadow-lg transition-all">
+            <button onClick={() => navigate('/contact')} className="px-6 py-2.5 bg-gradient-to-r from-cyan-600 to-purple-600 text-white rounded-lg hover:shadow-lg hover:from-cyan-700 hover:to-purple-700 active:scale-95 transition-all cursor-pointer">
               Book a Demo
             </button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2"
+            className="md:hidden p-2 cursor-pointer hover:bg-gray-100 rounded-lg transition-colors"
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? (
@@ -90,7 +77,7 @@ export function Navigation() {
                 {item.label}
               </Link>
             ))}
-            <button onClick={() => { navigate('/contact'); setIsOpen(false); }} className="w-full mt-4 px-6 py-2.5 bg-gradient-to-r from-cyan-600 to-purple-600 text-white rounded-lg">
+            <button onClick={() => { navigate('/contact'); setIsOpen(false); }} className="w-full mt-4 px-6 py-2.5 bg-gradient-to-r from-cyan-600 to-purple-600 text-white rounded-lg hover:shadow-lg hover:from-cyan-700 hover:to-purple-700 active:scale-95 transition-all cursor-pointer">
               Book a Demo
             </button>
           </div>

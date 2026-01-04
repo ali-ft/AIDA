@@ -245,7 +245,8 @@ export function SmarterWay() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-gradient-to-r from-cyan-600 to-purple-600 hover:from-cyan-700 hover:to-purple-700 text-white rounded-xl transition-all shadow-lg hover:shadow-2xl whitespace-nowrap"
+              onClick={() => window.location.href = '/contact'}
+              className="px-8 py-4 bg-gradient-to-r from-cyan-600 to-purple-600 hover:from-cyan-700 hover:to-purple-700 text-white rounded-xl transition-all shadow-lg hover:shadow-2xl whitespace-nowrap cursor-pointer"
             >
               Get Started
             </motion.button>

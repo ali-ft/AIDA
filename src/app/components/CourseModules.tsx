@@ -1,10 +1,29 @@
 import { motion } from 'motion/react';
-import { Clock, BookOpen, CheckCircle2 } from 'lucide-react';
+import { Clock, ChevronDown } from 'lucide-react';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+const getAssetPath = (path: string) => {
+  const baseUrl = (import.meta as any).env?.BASE_URL || '/';
+  return `${baseUrl}${path.startsWith('/') ? path.slice(1) : path}`;
+};
 
 export function CourseModules() {
+  const [expandedModules, setExpandedModules] = useState<Set<number>>(new Set());
+  const navigate = useNavigate();
+
+  const toggleModule = (index: number) => {
+    const newExpanded = new Set(expandedModules);
+    if (newExpanded.has(index)) {
+      newExpanded.delete(index);
+    } else {
+      newExpanded.add(index);
+    }
+    setExpandedModules(newExpanded);
+  };
+
   const modules = [
     {
-      icon: BookOpen,
       title: "Introduction to Data Science",
       duration: "10-16 hours",
       level: "Beginner",
@@ -17,10 +36,9 @@ export function CourseModules() {
         "Model error and evaluation intuition",
         "Hypothesis testing and t test fundamentals"
       ],
-      image: "https://images.unsplash.com/photo-1748439281934-2803c6a3ee36?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYXRhJTIwYW5hbHl0aWNzJTIwc3RhdGlzdGljcyUyMGNoYXJ0c3xlbnwxfHx8fDE3NjcxODI2NDd8MA&ixlib=rb-4.1.0&q=80&w=1080"
+      image: getAssetPath("assets/curriculum/Data-Science.png")
     },
     {
-      icon: BookOpen,
       title: "Machine Learning Fundamentals",
       duration: "12-16 hours",
       level: "Intermediate",
@@ -33,10 +51,9 @@ export function CourseModules() {
         "Overfitting and generalization intuition",
         "Interpreting results for business stakeholders"
       ],
-      image: "https://images.unsplash.com/photo-1717502085413-478382daf23f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxuZXVyYWwlMjBuZXR3b3JrJTIwYWxnb3JpdGhtfGVufDF8fHx8MTc2NzE4MjY0N3ww&ixlib=rb-4.1.0&q=80&w=1080"
+      image: getAssetPath("assets/curriculum/Machine-Learning.png")
     },
     {
-      icon: BookOpen,
       title: "Prompt Engineering for Business Workflows",
       duration: "6-12 hours",
       level: "Beginner",
@@ -49,10 +66,9 @@ export function CourseModules() {
         "RAG fundamentals for company knowledge bases",
         "Fine tuning overview and when it makes sense"
       ],
-      image: "https://images.unsplash.com/photo-1731963094554-c5c981ccdefd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3cml0aW5nJTIwcHJvbXB0cyUyMGNyZWF0aXZlJTIwdGV4dHxlbnwxfHx8fDE3NjcxODI2NDh8MA&ixlib=rb-4.1.0&q=80&w=1080"
+      image: getAssetPath("assets/curriculum/Prompt.png")
     },
     {
-      icon: BookOpen,
       title: "Natural Language Processing and LLMs",
       duration: "12-16 hours",
       level: "Advanced",
@@ -65,10 +81,9 @@ export function CourseModules() {
         "RAG pipelines, retrieval quality, and evaluation basics",
         "Reliability, safety, and bias considerations"
       ],
-      image: "https://images.unsplash.com/photo-1577563908411-5077b6dc7624?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsYW5ndWFnZSUyMGNvbW11bmljYXRpb24lMjB0ZXh0fGVufDF8fHx8MTc2NzE4MjY0OHww&ixlib=rb-4.1.0&q=80&w=1080"
+      image: getAssetPath("assets/curriculum/LLM.png")
     },
     {
-      icon: BookOpen,
       title: "Outlier and Fraud Analysis with AI",
       duration: "10-16 hours",
       level: "Intermediate",
@@ -81,10 +96,9 @@ export function CourseModules() {
         "Monitoring, alerting, and drift awareness",
         "Case exercises tailored to business fraud scenarios"
       ],
-      image: "https://images.unsplash.com/photo-1740908900906-a51032597559?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmcmF1ZCUyMGRldGVjdGlvbiUyMHNlY3VyaXR5JTIwYWxlcnQ8ZW58MXx8fHwxNzY3MTgyNjQ4fDA&ixlib=rb-4.1.0&q=80&w=1080"
+      image: getAssetPath("assets/curriculum/Outlier.png")
     },
     {
-      icon: BookOpen,
       title: "Industry Specific Analysis, AI for Mining",
       duration: "8-16 hours",
       level: "Advanced",
@@ -97,10 +111,9 @@ export function CourseModules() {
         "Quality monitoring and process control concepts",
         "Practical examples using mining style data scenarios"
       ],
-      image: "https://images.unsplash.com/photo-1582280871722-424e91cbee8b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtaW5pbmclMjBleGNhdmF0b3IlMjBoZWF2eSUyMG1hY2hpbmVyeXxlbnwxfHx8fDE3NjcxODI2NDl8MA&ixlib=rb-4.1.0&q=80&w=1080"
+      image: getAssetPath("assets/curriculum/Mining.png")
     },
     {
-      icon: BookOpen,
       title: "Industry Specific Analysis, AI for Healthcare",
       duration: "8-16 hours",
       level: "Advanced",
@@ -113,10 +126,9 @@ export function CourseModules() {
         "Quality improvement and error reduction workflows",
         "Real use case mapping to departments and roles"
       ],
-      image: "https://images.unsplash.com/photo-1504813184591-01572f98c85f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkb2N0b3IlMjBwYXRpZW50JTIwaGVhbHRoY2FyZSUyMGhvc3BpdGFsfGVufDF8fHx8MTc2NzE4MjY0OXww&ixlib=rb-4.1.0&q=80&w=1080"
+      image: getAssetPath("assets/curriculum/Healthcare.png")
     },
     {
-      icon: BookOpen,
       title: "Industry Specific Analysis, AI for Recruitment",
       duration: "8-16 hours",
       level: "Intermediate",
@@ -129,10 +141,9 @@ export function CourseModules() {
         "Workflow automation for recruiters and talent ops",
         "Practical scenarios for hiring funnels and compliance"
       ],
-      image: "https://images.unsplash.com/photo-1758518730380-04c8e0d57b68?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxqb2IlMjBpbnRlcnZpZXclMjBoaXJpbmclMjBjYW5kaWRhdGV8ZW58MXx8fHwxNzY3MTgyNjUwfDA&ixlib=rb-4.1.0&q=80&w=1080"
+      image: getAssetPath("assets/curriculum/Recruitment.png")
     },
     {
-      icon: BookOpen,
       title: "Industry Specific Analysis, AI for Fintech",
       duration: "8-16 hours",
       level: "Advanced",
@@ -145,10 +156,9 @@ export function CourseModules() {
         "Governance, audit readiness, and explainability basics",
         "Case exercises aligned with fintech workflows"
       ],
-      image: "https://images.unsplash.com/photo-1758524944226-461a52709c1a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaW5hbmNpYWwlMjBiYW5raW5nJTIwcGF5bWVudCUyMGNhcmR8ZW58MXx8fHwxNjcxODI2NTB8MA&ixlib=rb-4.1.0&q=80&w=1080"
+      image: getAssetPath("assets/curriculum/Fintech.png")
     },
     {
-      icon: BookOpen,
       title: "AI for Cybersecurity Concerns",
       duration: "8-16 hours",
       level: "Advanced",
@@ -161,7 +171,7 @@ export function CourseModules() {
         "Safe use of AI in incident response workflows",
         "Governance, access control, and secure AI usage policies"
       ],
-      image: "https://images.unsplash.com/photo-1719255417989-b6858e87359e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjeWJlciUyMGF0dGFjayUyMGhhY2tpbmclMjBzZWN1cml0eXxlbnwxfHx8fDE3NjcxODI2NTF8MA&ixlib=rb-4.1.0&q=80&w=1080"
+      image: getAssetPath("assets/curriculum/Cybersecurity.png")
     }
   ];
 
@@ -197,9 +207,13 @@ export function CourseModules() {
         </motion.div>
 
         {/* Modules Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {modules.map((module, index) => {
-            const Icon = module.icon;
+            const isExpanded = expandedModules.has(index);
+            const visibleTopics = module.topics.slice(0, 4);
+            const hiddenTopics = module.topics.slice(4);
+            const hasMore = module.topics.length > 4;
+
             return (
               <motion.div
                 key={index}
@@ -209,63 +223,82 @@ export function CourseModules() {
                 transition={{ 
                   duration: 0.3,
                 }}
-                className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
+                className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col"
               >
                 {/* Image */}
-                <div className="relative h-48 overflow-hidden">
+                <div className="relative h-48 sm:h-56 overflow-hidden">
                   <img
                     src={module.image}
                     alt={module.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.src = `https://via.placeholder.com/400x300?text=${encodeURIComponent(module.title)}`;
+                    }}
                   />
                   <div className={`absolute inset-0 bg-gradient-to-br ${module.color} opacity-60`}></div>
                   
-                  {/* Icon */}
-                  <div className="absolute top-4 right-4">
-                    <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-lg">
-                      <Icon className={`w-6 h-6 bg-gradient-to-br ${module.color} bg-clip-text text-transparent`} />
-                    </div>
-                  </div>
-
                   {/* Level Badge */}
                   <div className="absolute bottom-4 left-4">
-                    <span className={`px-3 py-1 rounded-full text-xs ${levelColors[module.level as keyof typeof levelColors]}`}>
+                    <span className={`px-3 py-1 rounded-full text-xs font-medium ${levelColors[module.level as keyof typeof levelColors]}`}>
                       {module.level}
                     </span>
                   </div>
                 </div>
 
                 {/* Content */}
-                <div className="p-6">
+                <div className="p-6 flex-grow flex flex-col">
                   <div className="flex items-center gap-2 mb-3">
-                    <Clock className="w-4 h-4 text-gray-400" />
+                    <Clock className="w-4 h-4 text-gray-400 flex-shrink-0" />
                     <span className="text-sm text-gray-500">{module.duration}</span>
                   </div>
 
-                  <h3 className="text-xl mb-4 text-gray-900">
+                  <h3 className="text-xl font-bold mb-4 text-gray-900 leading-tight">
                     {module.title}
                   </h3>
 
-                  <div className="space-y-2 mb-6">
-                    {module.topics.slice(0, 4).map((topic, idx) => (
-                      <div key={idx} className="flex items-start gap-2 text-sm text-gray-600">
-                        <CheckCircle2 className={`w-4 h-4 flex-shrink-0 mt-0.5 bg-gradient-to-br ${module.color} bg-clip-text text-transparent`} />
-                        <span>{topic}</span>
+                  {/* Topics List with Bullets */}
+                  <div className="space-y-2.5 mb-4 flex-grow">
+                    {visibleTopics.map((topic, idx) => (
+                      <div key={idx} className="flex items-start gap-3 text-sm text-gray-700">
+                        <div className={`flex-shrink-0 w-1.5 h-1.5 rounded-full mt-2 bg-gradient-to-br ${module.color}`}></div>
+                        <span className="leading-relaxed">{topic}</span>
                       </div>
                     ))}
-                    {module.topics.length > 4 && (
-                      <div className="text-sm text-gray-500 pl-6">
-                        +{module.topics.length - 4} more topics
+                    
+                    {/* Hidden Topics */}
+                    {hasMore && (
+                      <div className={`overflow-hidden transition-all duration-300 ${isExpanded ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}>
+                        {hiddenTopics.map((topic, idx) => (
+                          <div key={idx + 4} className="flex items-start gap-3 text-sm text-gray-700 pt-2.5">
+                            <div className={`flex-shrink-0 w-1.5 h-1.5 rounded-full mt-2 bg-gradient-to-br ${module.color}`}></div>
+                            <span className="leading-relaxed">{topic}</span>
+                          </div>
+                        ))}
                       </div>
                     )}
                   </div>
 
+                  {/* Read More Button */}
+                  {hasMore && (
+                    <button
+                      onClick={() => toggleModule(index)}
+                      className="flex items-center gap-2 text-sm font-medium text-gray-600 hover:text-gray-900 mb-4 transition-colors self-start cursor-pointer"
+                    >
+                      <span>{isExpanded ? 'Read Less' : 'Read More'}</span>
+                      <ChevronDown 
+                        className={`w-4 h-4 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}
+                      />
+                    </button>
+                  )}
+
                   <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className={`w-full py-3 rounded-xl bg-gradient-to-r ${module.color} text-white hover:shadow-lg transition-shadow`}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    onClick={() => navigate('/contact')}
+                    className={`w-full py-3 rounded-xl bg-gradient-to-r ${module.color} text-white hover:shadow-lg active:scale-95 transition-shadow text-sm sm:text-base font-medium cursor-pointer`}
                   >
-                    View Details
+                    Contact Us
                   </motion.button>
                 </div>
               </motion.div>
@@ -278,18 +311,19 @@ export function CourseModules() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="mt-16 text-center bg-white rounded-3xl p-8 shadow-lg"
+          className="mt-12 sm:mt-16 text-center bg-gradient-to-br from-gray-50 to-blue-50 rounded-3xl p-6 sm:p-8 lg:p-10 shadow-lg"
         >
-          <h3 className="text-2xl text-gray-900 mb-4">Can't find what you need?</h3>
-          <p className="text-gray-600 mb-6">
+          <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">Can't find what you need?</h3>
+          <p className="text-sm sm:text-base text-gray-600 mb-6 sm:mb-8 max-w-2xl mx-auto">
             We offer custom curriculum development tailored to your specific industry and business needs.
           </p>
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl hover:shadow-2xl transition-shadow"
+            onClick={() => navigate('/contact')}
+            className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl hover:shadow-2xl active:scale-95 transition-shadow text-sm sm:text-base font-medium w-full sm:w-auto cursor-pointer"
           >
-            Request Custom Training
+            Contact Us
           </motion.button>
         </motion.div>
       </div>

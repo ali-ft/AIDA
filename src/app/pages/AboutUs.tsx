@@ -1,8 +1,12 @@
 import { motion } from "motion/react";
-import { Heart, Target, Users, Award, Lightbulb, Globe } from "lucide-react";
+import { Heart, Target, Users, Lightbulb, Globe } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 export function AboutUs() {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
   const values = [
     {
       icon: Heart,
@@ -26,27 +30,20 @@ export function AboutUs() {
     }
   ];
 
-  const stats = [
-    { number: "2000+", label: "Students Trained" },
-    { number: "50+", label: "Expert Instructors" },
-    { number: "10+", label: "Training Modules" },
-    { number: "98%", label: "Satisfaction Rate" }
-  ];
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50">
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-r from-cyan-600 to-purple-600">
+      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-r from-cyan-600 to-purple-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl text-white mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white mb-4 sm:mb-6 px-2">
               About AIDA
             </h1>
-            <p className="text-xl sm:text-2xl text-white/90 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 max-w-3xl mx-auto px-2">
               Empowering organizations and individuals with cutting-edge AI education
             </p>
           </motion.div>
@@ -62,13 +59,13 @@ export function AboutUs() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl sm:text-5xl mb-6">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl mb-4 sm:mb-6">
                 Our Mission
               </h2>
-              <p className="text-lg text-gray-600 mb-6">
-                At AIDA, we're on a mission to democratize AI education and empower organizations to leverage artificial intelligence for positive impact. We believe that AI should be accessible, understandable, and actionable for everyone.
+              <p className="text-base sm:text-lg text-gray-600 mb-4 sm:mb-6">
+                At AIDA, we're on a mission to make AI education accessible and empower organizations to leverage artificial intelligence for positive impact. We believe that AI should be accessible, understandable, and actionable for everyone.
               </p>
-              <p className="text-lg text-gray-600">
+              <p className="text-base sm:text-lg text-gray-600">
                 Founded by experts in AI, education, and organizational development, AIDA brings together world-class instructors, cutting-edge curriculum, and a proven methodology to help businesses and institutions thrive in the age of AI.
               </p>
             </motion.div>
@@ -92,7 +89,7 @@ export function AboutUs() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-gradient-to-br from-gray-900 via-indigo-900 to-purple-900">
+      {/* <section className="py-16 bg-gradient-to-br from-gray-900 via-indigo-900 to-purple-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0 }}
@@ -123,7 +120,7 @@ export function AboutUs() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Values Section */}
       <section className="py-16 sm:py-24">
@@ -182,7 +179,7 @@ export function AboutUs() {
             </p>
             <Link
               to="/contact"
-              className="inline-block px-10 py-4 bg-white text-purple-600 rounded-xl hover:shadow-2xl transition-all text-lg"
+              className="inline-block px-10 py-4 bg-white text-purple-600 rounded-xl hover:shadow-2xl hover:bg-gray-50 active:scale-95 transition-all text-lg cursor-pointer"
             >
               Get in Touch
             </Link>

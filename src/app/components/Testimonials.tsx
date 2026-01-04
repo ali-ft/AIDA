@@ -150,7 +150,8 @@ export function Testimonials() {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-10 py-4 bg-white text-cyan-600 font-bold rounded-xl shadow-2xl hover:shadow-white/30 transition-all text-lg"
+            onClick={() => window.location.href = '/contact'}
+            className="px-10 py-4 bg-white text-cyan-600 font-bold rounded-xl shadow-2xl hover:shadow-white/30 hover:bg-gray-50 active:scale-95 transition-all text-lg cursor-pointer"
           >
             Book a Demo
           </motion.button>
