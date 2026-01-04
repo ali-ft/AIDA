@@ -192,16 +192,16 @@ export function Benefits() {
                   ></div>
 
                   {/* Icon and Title together */}
-                  <div className="flex items-center gap-4 mb-6">
+                  <div className="flex items-center gap-3 mb-6">
                     <motion.div
                       whileHover={{ rotate: 360 }}
                       transition={{ duration: 0.6 }}
-                      className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${stat.color} flex items-center justify-center flex-shrink-0`}
+                      className={`w-12 h-12 rounded-xl bg-gradient-to-br ${stat.color} flex items-center justify-center flex-shrink-0`}
                     >
-                      <Icon className="w-8 h-8 text-white" />
+                      <Icon className="w-6 h-6 text-white" />
                     </motion.div>
                     {/* Title */}
-                    <h3 className="text-xl font-semibold">{stat.title}</h3>
+                    <h3 className="text-base sm:text-lg font-semibold">{stat.title}</h3>
                   </div>
 
                   {/* Large percentage with gradient text */}
