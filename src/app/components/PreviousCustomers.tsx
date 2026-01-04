@@ -1,6 +1,11 @@
 import { motion } from 'motion/react';
 import { Building2, Globe, Sparkles, GraduationCap } from 'lucide-react';
 
+const getAssetPath = (path: string) => {
+  const baseUrl = (import.meta as any).env?.BASE_URL || '/';
+  return `${baseUrl}${path.startsWith('/') ? path.slice(1) : path}`;
+};
+
 export function PreviousCustomers() {
   const customers = [
     { 
@@ -10,7 +15,7 @@ export function PreviousCustomers() {
       location: "Netherlands",
       description: "One of Europe's leading research universities",
       color: "from-blue-600 to-blue-800",
-      logo: "/assets/Leiden_University.png"
+      logo: getAssetPath("assets/Leiden_University.png")
     },
     { 
       name: "Maastricht University", 
@@ -19,7 +24,7 @@ export function PreviousCustomers() {
       location: "Netherlands",
       description: "International research university with innovative approach",
       color: "from-red-600 to-red-800",
-      logo: "/assets/maastricht-university.png"
+      logo: getAssetPath("assets/maastricht-university.png")
     },
     { 
       name: "University of Birmingham", 
@@ -28,7 +33,7 @@ export function PreviousCustomers() {
       location: "United Kingdom",
       description: "Member of prestigious Russell Group universities",
       color: "from-purple-600 to-indigo-800",
-      logo: "/assets/birmangam.png"
+      logo: getAssetPath("assets/birmangam.png")
     }
   ];
 

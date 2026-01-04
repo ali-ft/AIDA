@@ -1,5 +1,10 @@
 import { motion } from "motion/react";
 
+const getAssetPath = (path: string) => {
+  const baseUrl = (import.meta as any).env?.BASE_URL || '/';
+  return `${baseUrl}${path.startsWith('/') ? path.slice(1) : path}`;
+};
+
 export function Hero() {
   const handleExploreCourses = () => {
     const element = document.getElementById('modules');
@@ -11,7 +16,7 @@ export function Hero() {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <img
-          src="/assets/banner-hero-section.png"
+          src={getAssetPath("assets/banner-hero-section.png")}
           alt="Corporate AI Training"
           className="w-full h-full object-cover"
         />

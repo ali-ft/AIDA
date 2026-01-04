@@ -2,6 +2,11 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 
+const getAssetPath = (path: string) => {
+  const baseUrl = (import.meta as any).env?.BASE_URL || '/';
+  return `${baseUrl}${path.startsWith('/') ? path.slice(1) : path}`;
+};
+
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
@@ -32,7 +37,7 @@ export function Navigation() {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
-            <img src="/assets/aida-logo.png" alt="AIDA AI" className="h-12 w-12" />
+            <img src={getAssetPath("assets/aida-logo.png")} alt="AIDA AI" className="h-12 w-12" />
             <div>
               <div className="text-xl font-bold bg-gradient-to-r from-cyan-600 to-purple-600 bg-clip-text text-transparent">
                 AIDA AI

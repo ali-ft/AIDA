@@ -8,6 +8,11 @@ import {
   Building,
 } from "lucide-react";
 
+const getAssetPath = (path: string) => {
+  const baseUrl = (import.meta as any).env?.BASE_URL || '/';
+  return `${baseUrl}${path.startsWith('/') ? path.slice(1) : path}`;
+};
+
 export function SmarterWay() {
   const ways = [
     {
@@ -47,7 +52,7 @@ export function SmarterWay() {
       highlight: "Ideas to execution",
       gradient: "from-green-500 to-emerald-500",
       position: "left",
-      image: "/assets/card-3.png"
+      image: getAssetPath("assets/card-3.png")
     },
     {
       icon: Layers,
@@ -60,7 +65,7 @@ export function SmarterWay() {
       highlight: "Department-specific",
       gradient: "from-orange-500 to-red-500",
       position: "right",
-      image: "/assets/card-4.png"
+      image: getAssetPath("assets/card-4.png")
     },
     {
       icon: Lock,
@@ -73,7 +78,7 @@ export function SmarterWay() {
       highlight: "Safe usage standards",
       gradient: "from-indigo-500 to-purple-500",
       position: "left",
-      image: "/assets/card-5.png"
+      image: getAssetPath("assets/card-5.png")
     },
     {
       icon: Building,
@@ -86,7 +91,7 @@ export function SmarterWay() {
       highlight: "C-suite to frontline",
       gradient: "from-pink-500 to-rose-500",
       position: "right",
-      image: "/assets/card-6.png"
+      image: getAssetPath("assets/card-6.png")
     },
   ];
 

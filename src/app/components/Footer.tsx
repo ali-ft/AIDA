@@ -1,10 +1,13 @@
-import { motion } from "motion/react";
 import { Linkedin, Mail } from "lucide-react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+
+const getAssetPath = (path: string) => {
+  const baseUrl = (import.meta as any).env?.BASE_URL || '/';
+  return `${baseUrl}${path.startsWith('/') ? path.slice(1) : path}`;
+};
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
-  const navigate = useNavigate();
 
   return (
     <footer className="bg-gradient-to-br from-slate-900 to-gray-900 text-white py-8">
@@ -14,7 +17,7 @@ export function Footer() {
           {/* Brand Section */}
           <div className="flex items-center gap-3">
             <img
-              src="/assets/aida-logo.png"
+              src={getAssetPath("assets/aida-logo.png")}
               alt="AIDA AI"
               className="h-10 w-10"
             />
