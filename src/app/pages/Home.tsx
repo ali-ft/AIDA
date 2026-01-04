@@ -3,7 +3,8 @@ import { Challenge } from "../components/Challenge";
 import { Solution } from "../components/Solution";
 import { Benefits } from "../components/Benefits";
 import { SmarterWay } from "../components/SmarterWay";
-import { PreviousCustomers } from "../components/PreviousCustomers";
+// import { PreviousCustomers } from "../components/PreviousCustomers";
+import { WhyUs } from "../components/WhyUs";
 import { Testimonials } from "../components/Testimonials";
 import { CourseModules } from "../components/CourseModules";
 import { Pricing } from "../components/Pricing";
@@ -32,8 +33,12 @@ export function Home() {
         <SmarterWay />
       </div>
 
-      <div id="customers">
+      {/* <div id="customers">
         <PreviousCustomers />
+      </div> */}
+
+      <div id="why-us">
+        <WhyUs />
       </div>
 
       <div id="testimonials">

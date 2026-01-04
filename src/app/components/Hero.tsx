@@ -1,5 +1,4 @@
 import { motion } from "motion/react";
-import heroImage from "figma:asset/3af554a36bafc4ceccaab5764d511d4748d7dd8c.png";
 
 export function Hero() {
   const handleExploreCourses = () => {
@@ -12,7 +11,7 @@ export function Hero() {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <img
-          src={heroImage}
+          src="/assets/banner-hero-section.png"
           alt="Corporate AI Training"
           className="w-full h-full object-cover"
         />

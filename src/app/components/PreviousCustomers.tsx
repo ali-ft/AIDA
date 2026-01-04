@@ -1,8 +1,5 @@
 import { motion } from 'motion/react';
 import { Building2, Globe, Sparkles, GraduationCap } from 'lucide-react';
-import leidenLogo from 'figma:asset/c141912995381c315b691576bd3aa351ab3f89d5.png';
-import birminghamLogo from 'figma:asset/aec424cdf43e71558b5f42a2cfb884bc1ad5e7c5.png';
-import maastrichtLogo from 'figma:asset/da9036b94cc997a7ca2c9204f489fbebe8adc753.png';
 
 export function PreviousCustomers() {
   const customers = [
@@ -13,7 +10,7 @@ export function PreviousCustomers() {
       location: "Netherlands",
       description: "One of Europe's leading research universities",
       color: "from-blue-600 to-blue-800",
-      logo: leidenLogo
+      logo: "/assets/Leiden_University.png"
     },
     { 
       name: "Maastricht University", 
@@ -22,7 +19,7 @@ export function PreviousCustomers() {
       location: "Netherlands",
       description: "International research university with innovative approach",
       color: "from-red-600 to-red-800",
-      logo: maastrichtLogo
+      logo: "/assets/maastricht-university.png"
     },
     { 
       name: "University of Birmingham", 
@@ -31,7 +28,7 @@ export function PreviousCustomers() {
       location: "United Kingdom",
       description: "Member of prestigious Russell Group universities",
       color: "from-purple-600 to-indigo-800",
-      logo: birminghamLogo
+      logo: "/assets/birmangam.png"
     }
   ];
 

@@ -1,7 +1,6 @@
 import { motion } from "motion/react";
 import { Linkedin, Mail } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
-import logo from "figma:asset/443853629c7abcb2010de3cdc327eb4d36d43b0e.png";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -15,7 +14,7 @@ export function Footer() {
           {/* Brand Section */}
           <div className="flex items-center gap-3">
             <img
-              src={logo}
+              src="/assets/aida-logo.png"
               alt="AIDA AI"
               className="h-10 w-10"
             />

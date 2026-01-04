@@ -13,8 +13,11 @@ export function SmarterWay() {
     {
       icon: GraduationCap,
       title: "Expert led credibility",
-      description:
-        "Many companies struggle with low trust in AI training because instructors feel generic, theoretical, or not senior enough for C levels. AIDA solves this with PhD level AI training instructors from top ranked global universities, delivering credible learning that leadership respects and teams follow.",
+      description: (
+        <>
+          Many companies struggle with low trust in AI training because instructors feel generic, theoretical, or not senior enough for C levels. <strong>AIDA</strong> solves this with <strong>PhD level AI training instructors</strong> from <strong>top ranked global universities</strong>, delivering credible learning that leadership respects and teams follow.
+        </>
+      ),
       highlight: "PhD-level instructors",
       gradient: "from-blue-500 to-cyan-500",
       position: "left",
@@ -23,8 +26,11 @@ export function SmarterWay() {
     {
       icon: Wrench,
       title: "Hands on skills that stick",
-      description:
-        "Teams often attend AI sessions but still cannot apply AI in daily workflows, so productivity does not improve and momentum fades. AIDA delivers hands on generative AI training for employees with real role based tasks, showing AI in action for automation, reporting, analysis, and decision making.",
+      description: (
+        <>
+          Teams often attend AI sessions but still cannot apply AI in daily workflows, so productivity does not improve and momentum fades. <strong>AIDA</strong> delivers <strong>hands on generative AI training for employees</strong> with real role based tasks, showing AI in action for automation, reporting, analysis, and decision making.
+        </>
+      ),
       highlight: "Real role-based tasks",
       gradient: "from-purple-500 to-pink-500",
       position: "right",
@@ -33,42 +39,54 @@ export function SmarterWay() {
     {
       icon: Briefcase,
       title: "Real world implementation experience",
-      description:
-        "Many training providers explain AI concepts but cannot guide teams through practical constraints like change management, tool selection, and rollout planning. AIDA brings industry proven AI implementation training, helping managers move from ideas to execution with workflows that fit real business operations.",
+      description: (
+        <>
+          Many training providers explain AI concepts but cannot guide teams through practical constraints like change management, tool selection, and rollout planning. <strong>AIDA</strong> brings <strong>industry proven AI implementation training</strong>, helping managers move from ideas to execution with workflows that fit real business operations.
+        </>
+      ),
       highlight: "Ideas to execution",
       gradient: "from-green-500 to-emerald-500",
       position: "left",
-      image: "https://images.unsplash.com/photo-1601509876296-aba16d4c10a4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMHRlYW0lMjBjb2xsYWJvcmF0aW9ufGVufDF8fHx8MTc2NzI4NDk5N3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+      image: "/assets/card-3.png"
     },
     {
       icon: Layers,
       title: "Customized training by department",
-      description:
-        "One size fits all AI courses fail because finance, HR, sales, operations, and customer support have different needs and pain points. AIDA builds custom corporate AI training programs aligned with your teams priorities, so every session maps directly to job tasks and measurable outcomes.",
+      description: (
+        <>
+          One size fits all AI courses fail because finance, HR, sales, operations, and customer support have different needs and pain points. <strong>AIDA</strong> builds <strong>custom corporate AI training programs</strong> aligned with your teams priorities, so every session maps directly to job tasks and measurable outcomes.
+        </>
+      ),
       highlight: "Department-specific",
       gradient: "from-orange-500 to-red-500",
       position: "right",
-      image: "https://images.unsplash.com/photo-1765438863717-49fca900f861?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb3Jwb3JhdGUlMjB3b3Jrc2hvcCUyMHRyYWluaW5nfGVufDF8fHx8MTc2NzMzNjQzM3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+      image: "/assets/card-4.png"
     },
     {
       icon: Lock,
       title: "Clear governance and safe usage",
-      description:
-        "Leaders worry about data leakage, unapproved tools, and inconsistent AI usage across teams, which creates legal and brand risk. AIDA includes responsible AI governance training for companies, giving practical policies, safe prompting patterns, and usage standards that teams can follow immediately.",
+      description: (
+        <>
+          Leaders worry about data leakage, unapproved tools, and inconsistent AI usage across teams, which creates legal and brand risk. <strong>AIDA</strong> includes <strong>responsible AI governance training for companies</strong>, giving practical policies, safe prompting patterns, and usage standards that teams can follow immediately.
+        </>
+      ),
       highlight: "Safe usage standards",
       gradient: "from-indigo-500 to-purple-500",
       position: "left",
-      image: "https://images.unsplash.com/photo-1760199789455-49098afd02f0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjeWJlcnNlY3VyaXR5JTIwZGlnaXRhbHxlbnwxfHx8fDE3NjczMzY0MzR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+      image: "/assets/card-5.png"
     },
     {
       icon: Building,
       title: "Adoption across the whole organization",
-      description:
-        "Even good training fails when executives, middle managers, and employees are not aligned, leading to scattered pilots and slow adoption. AIDA provides executive AI leadership training plus AI training for managers and employees, aligning strategy and daily execution so AI adoption becomes consistent and scalable.",
+      description: (
+        <>
+          Even good training fails when executives, middle managers, and employees are not aligned, leading to scattered pilots and slow adoption. <strong>AIDA</strong> provides <strong>executive AI leadership training</strong> plus <strong>AI training for managers and employees</strong>, aligning strategy and daily execution so AI adoption becomes consistent and scalable.
+        </>
+      ),
       highlight: "C-suite to frontline",
       gradient: "from-pink-500 to-rose-500",
       position: "right",
-      image: "https://images.unsplash.com/photo-1758691737217-77302c5f988f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkaXZlcnNlJTIwdGVhbSUyMG9mZmljZXxlbnwxfHx8fDE3NjczMzY0MzR8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+      image: "/assets/card-6.png"
     },
   ];
 
@@ -78,7 +96,7 @@ export function SmarterWay() {
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-br from-cyan-200/30 to-purple-200/30 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-blue-200/30 to-pink-200/30 rounded-full blur-3xl"></div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative max-w-[98%] xl:max-w-[95%] 2xl:max-w-[92%] mx-auto px-1 sm:px-2 lg:px-4">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -118,7 +136,7 @@ export function SmarterWay() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="relative lg:grid lg:grid-cols-2 lg:gap-8"
+                  className="relative lg:grid lg:grid-cols-2 lg:gap-8 lg:items-stretch"
                 >
                   {/* Number Circle - Center for desktop */}
                   <div className="hidden lg:flex absolute left-1/2 top-8 -translate-x-1/2 z-10">
@@ -132,10 +150,10 @@ export function SmarterWay() {
                   </div>
 
                   {/* Content Card - Left side if isLeft, Right side if !isLeft */}
-                  <div className={`${isLeft ? 'lg:col-start-1' : 'lg:col-start-2'}`}>
+                  <div className={`${isLeft ? 'lg:col-start-1' : 'lg:col-start-2'} h-full flex`}>
                     <motion.div
                       whileHover={{ scale: 1.03, y: -5 }}
-                      className="relative bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all border border-gray-100 overflow-hidden group"
+                      className="relative bg-white rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all border border-gray-100 overflow-hidden group w-full"
                     >
                       {/* Gradient overlay on hover */}
                       <div className={`absolute inset-0 bg-gradient-to-br ${way.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}></div>
@@ -177,14 +195,14 @@ export function SmarterWay() {
                   </div>
 
                   {/* Image - Right side if isLeft, Left side if !isLeft */}
-                  <div className={`hidden lg:block ${isLeft ? 'lg:col-start-2' : 'lg:col-start-1 lg:row-start-1'}`}>
+                  <div className={`hidden lg:block ${isLeft ? 'lg:col-start-2' : 'lg:col-start-1 lg:row-start-1'} h-full`}>
                     <motion.div
                       initial={{ opacity: 0, scale: 0.9 }}
                       whileInView={{ opacity: 1, scale: 1 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.5, delay: index * 0.1 }}
                       whileHover={{ scale: 1.05, rotate: 2 }}
-                      className="relative h-full min-h-[400px] rounded-3xl overflow-hidden shadow-2xl"
+                      className="relative h-full rounded-3xl overflow-hidden shadow-2xl"
                     >
                       <img
                         src={way.image}

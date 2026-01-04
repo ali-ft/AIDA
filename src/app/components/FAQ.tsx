@@ -8,59 +8,115 @@ export function FAQ() {
   const faqs = [
     {
       question: "What is corporate AI training, and who is it for?",
-      answer: "Corporate AI training teaches leaders and teams how to use AI tools to improve daily work, decision-making, and output quality. AIDA delivers corporate AI training for C-level executives, managers, and employees with role-based tracks so every level gets practical, job-relevant skills."
+      answer: (
+        <>
+          Corporate AI training teaches leaders and teams how to use AI tools to improve daily work, decision-making, and output quality. AIDA delivers <strong>corporate AI training for C-level executives, managers, and employees</strong> with role-based tracks so every level gets practical, job-relevant skills.
+        </>
+      )
     },
     {
       question: "How fast will we see results from AI training?",
-      answer: "Many companies see quick wins when training is hands-on and tied to real workflows like reporting, communication, and analysis. AIDA's ROI-focused corporate AI training program starts with immediate use cases and creates an adoption plan so benefits show up in weeks—not quarters."
+      answer: (
+        <>
+          Many companies see quick wins when training is hands-on and tied to real workflows like reporting, communication, and analysis. AIDA's <strong>ROI-focused corporate AI training program</strong> starts with immediate use cases and creates an adoption plan so benefits show up in weeks—not quarters.
+        </>
+      )
     },
     {
       question: "Will AI training actually improve productivity, or is it just hype?",
-      answer: "Productivity improves when people learn where AI saves time and how to use it safely and consistently. AIDA's hands-on generative AI training for business teams teaches repeatable workflows that reduce repetitive tasks and speed up execution."
+      answer: (
+        <>
+          Productivity improves when people learn where AI saves time and how to use it safely and consistently. AIDA's <strong>hands-on generative AI training for business teams</strong> teaches repeatable workflows that reduce repetitive tasks and speed up execution.
+        </>
+      )
     },
     {
       question: "How does AI training help with retention and lower turnover?",
-      answer: "Employees stay longer when they feel they're growing and staying relevant in a fast-changing market. AIDA offers AI upskilling programs for employee retention that increase confidence, motivation, and long-term engagement across teams."
+      answer: (
+        <>
+          Employees stay longer when they feel they're growing and staying relevant in a fast-changing market. AIDA offers <strong>AI upskilling programs for employee retention</strong> that increase confidence, motivation, and long-term engagement across teams.
+        </>
+      )
     },
     {
       question: "Can AI training reduce errors and improve work quality?",
-      answer: "Yes—when teams learn to validate outputs, standardize templates, and use AI as a quality assistant rather than a shortcut. AIDA provides responsible AI training for enterprises that builds reliable review habits and reduces costly mistakes."
+      answer: (
+        <>
+          Yes—when teams learn to validate outputs, standardize templates, and use AI as a quality assistant rather than a shortcut. AIDA provides <strong>responsible AI training for enterprises</strong> that builds reliable review habits and reduces costly mistakes.
+        </>
+      )
     },
     {
       question: "Is AI training useful for non-technical employees?",
-      answer: "Absolutely—most AI value comes from everyday knowledge work like writing, summarizing, planning, and customer communication. AIDA runs AI training for non-technical employees with simple, practical exercises so adoption becomes easy and confident."
+      answer: (
+        <>
+          Absolutely—most AI value comes from everyday knowledge work like writing, summarizing, planning, and customer communication. AIDA runs <strong>AI training for non-technical employees</strong> with simple, practical exercises so adoption becomes easy and confident.
+        </>
+      )
     },
     {
       question: "How do you train middle managers to lead AI adoption?",
-      answer: "Managers need clear playbooks for using AI in planning, performance, reporting, and decision-making—without disrupting operations. AIDA's AI training for managers and team leads gives managers ready-to-use frameworks and team rollout steps."
+      answer: (
+        <>
+          Managers need clear playbooks for using AI in planning, performance, reporting, and decision-making—without disrupting operations. AIDA's <strong>AI training for managers and team leads</strong> gives managers ready-to-use frameworks and team rollout steps.
+        </>
+      )
     },
     {
       question: "How do we avoid confusion when different teams use different AI tools?",
-      answer: "Without alignment, AI becomes fragmented and results become inconsistent across departments. AIDA's enterprise AI adoption training standardizes best practices, role-based use cases, and shared guidelines so teams operate with one AI playbook."
+      answer: (
+        <>
+          Without alignment, AI becomes fragmented and results become inconsistent across departments. AIDA's <strong>enterprise AI adoption training</strong> standardizes best practices, role-based use cases, and shared guidelines so teams operate with one AI playbook.
+        </>
+      )
     },
     {
       question: "Do you offer customized AI training based on our industry and workflows?",
-      answer: "Generic courses often miss your real processes, KPIs, and constraints, so adoption drops after training ends. AIDA provides customized AI training programs for companies built around your departments, real tasks, and measurable outcomes."
+      answer: (
+        <>
+          Generic courses often miss your real processes, KPIs, and constraints, so adoption drops after training ends. AIDA provides <strong>customized AI training programs for companies</strong> built around your departments, real tasks, and measurable outcomes.
+        </>
+      )
     },
     {
       question: "Can you train our executives separately from employees?",
-      answer: "Yes—executives need strategy, governance, and decision frameworks, while employees need practical workflow skills. AIDA delivers executive AI training programs plus employee generative AI training so every level gets the right depth and focus."
+      answer: (
+        <>
+          Yes—executives need strategy, governance, and decision frameworks, while employees need practical workflow skills. AIDA delivers <strong>executive AI training programs</strong> plus <strong>employee generative AI training</strong> so every level gets the right depth and focus.
+        </>
+      )
     },
     {
       question: "Will AI training increase employee satisfaction and motivation?",
-      answer: "Learning modern skills boosts confidence and reduces the fear of being left behind, which improves morale. AIDA's corporate AI learning and development programs are designed to be engaging and immediately useful, creating momentum across teams."
+      answer: (
+        <>
+          Learning modern skills boosts confidence and reduces the fear of being left behind, which improves morale. AIDA's <strong>corporate AI learning and development programs</strong> are designed to be engaging and immediately useful, creating momentum across teams.
+        </>
+      )
     },
     {
       question: "How does AI training support competitive advantage and hiring?",
-      answer: "Companies that build AI skills internally execute faster and attract stronger candidates who want modern learning environments. AIDA's enterprise AI training and upskilling services strengthen employer branding and help you compete for high-skill talent."
+      answer: (
+        <>
+          Companies that build AI skills internally execute faster and attract stronger candidates who want modern learning environments. AIDA's <strong>enterprise AI training and upskilling services</strong> strengthen employer branding and help you compete for high-skill talent.
+        </>
+      )
     },
     {
       question: "How do you measure success after the training?",
-      answer: "The best measurement combines adoption, time saved, quality improvements, and team-level consistency—not just attendance. AIDA's measurable AI training for business outcomes includes practical benchmarks and follow-up recommendations to keep gains compounding."
+      answer: (
+        <>
+          The best measurement combines adoption, time saved, quality improvements, and team-level consistency—not just attendance. AIDA's <strong>measurable AI training for business outcomes</strong> includes practical benchmarks and follow-up recommendations to keep gains compounding.
+        </>
+      )
     },
     {
       question: "What makes AIDA different from other AI training providers?",
-      answer: "Many providers offer generic lectures; real impact requires credibility, hands-on practice, and customization. AIDA delivers PhD-led corporate artificial intelligence training with industry-experienced AI trainers and customized tracks that match your company's goals."
+      answer: (
+        <>
+          Many providers offer generic lectures; real impact requires credibility, hands-on practice, and customization. AIDA delivers <strong>PhD-led corporate artificial intelligence training</strong> with <strong>industry-experienced AI trainers</strong> and customized tracks that match your company's goals.
+        </>
+      )
     }
   ];
 

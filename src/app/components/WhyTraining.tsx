@@ -112,14 +112,14 @@ export function WhyTraining() {
                   </div>
 
                   {/* Title */}
-                  <h3 className={`text-xl sm:text-2xl lg:text-3xl text-gray-900 mb-3 sm:mb-4 leading-tight ${
+                  <h3 className={`text-center text-xl sm:text-2xl lg:text-3xl text-gray-900 mb-3 sm:mb-4 leading-tight ${
                     isLarge ? 'lg:max-w-4xl' : 'lg:max-w-lg'
                   }`}>
                     {reason.title}
                   </h3>
 
                   {/* Description */}
-                  <p className={`text-sm sm:text-base text-gray-700 leading-relaxed ${
+                  <p className={`text-center text-sm sm:text-base text-gray-700 leading-relaxed ${
                     isLarge ? 'lg:max-w-4xl lg:text-lg' : 'lg:max-w-lg'
                   }`}>
                     {reason.description}
