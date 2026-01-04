@@ -1,0 +1,52 @@
+import { motion } from "motion/react";
+import heroImage from "figma:asset/3af554a36bafc4ceccaab5764d511d4748d7dd8c.png";
+
+export function Hero() {
+  const handleExploreCourses = () => {
+    const element = document.getElementById('modules');
+    element?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  return (
+    <section className="relative h-[85vh] flex items-center overflow-hidden">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0">
+        <img
+          src={heroImage}
+          alt="Corporate AI Training"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-gray-900/90 via-gray-900/70 to-gray-900/50"></div>
+      </div>
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24 text-center">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.3 }}
+          className="space-y-8"
+        >
+          {/* Main Headline */}
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-white leading-tight">
+            Unlock Your Company's Potential with AI
+          </h1>
+
+          {/* Subtitle */}
+          <p className="text-xl sm:text-2xl lg:text-3xl text-cyan-300 max-w-4xl mx-auto">
+            International AI Training for C-Levels, Managers & Employees
+          </p>
+
+          {/* CTA Button */}
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={handleExploreCourses}
+            className="px-8 py-4 bg-gradient-to-r from-cyan-600 to-purple-600 text-white rounded-lg text-lg shadow-2xl hover:shadow-cyan-500/50 transition-all"
+          >
+            Explore Courses
+          </motion.button>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
