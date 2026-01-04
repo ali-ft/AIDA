@@ -111,16 +111,16 @@ This project is configured for automatic deployment to GitHub Pages. When you pu
 
 #### Initial Setup:
 
-**Important**: Before the first deployment, you need to enable GitHub Pages:
+**Important**: Before the first deployment, you need to enable GitHub Pages manually:
 
 1. Go to your repository settings on GitHub
 2. Navigate to "Pages" in the left sidebar
-3. Under "Source", select "GitHub Actions"
-4. Save the settings
+3. Under "Source", select "GitHub Actions" (not "Deploy from a branch")
+4. Click "Save"
 
-**Note**: The workflow will automatically enable Pages if it's not already enabled (using `enablement: true`), but it's recommended to enable it manually first.
+**Why manual setup?**: The workflow needs Pages to be enabled first before it can deploy. The `configure-pages` action requires additional permissions that may not be available in all repositories.
 
-After enabling, the workflow will automatically deploy on every push to `main`
+After enabling Pages, the workflow will automatically deploy on every push to `main` branch.
 
 #### Deployment URL:
 
