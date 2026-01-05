@@ -30,8 +30,8 @@ export function Contact() {
     {
       icon: Mail,
       title: "Email",
-      value: "info@aida-training.com",
-      link: "mailto:info@aida-training.com"
+      value: "Hossein@aidaedu.ae",
+      link: "mailto:Hossein@aidaedu.ae"
     },
     {
       icon: Phone,

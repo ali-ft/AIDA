@@ -4,45 +4,13 @@ import { Quote, Star } from "lucide-react";
 export function Testimonials() {
   const testimonials = [
     {
-      name: "Prof. Dr. Sarah Johnson",
-      role: "Dean of Technology",
-      university: "Leiden University",
+      company: "Whitefox",
       rating: 5,
-      text: "AIDA's AI training program exceeded our expectations. Our faculty and staff now confidently integrate AI tools into their daily workflows, resulting in significant time savings and improved research quality.",
-      course: "AIRETE LEVEL EFFICIENCY",
-      topics: [
-        "Understand AI for data",
-        "Prompt optimization",
-        "Orchestration",
-        "Embedding",
-      ],
-    },
-    {
-      name: "Dr. Michael van Berg",
-      role: "Director of Innovation",
-      university: "Maastricht University",
-      rating: 5,
-      text: "The hands-on approach and expert instructors from AIDA transformed how our teams think about AI. We've seen measurable ROI within the first quarter after completing the training.",
-      course: "AI STRATEGY FOR DATA MANAGERS",
-      topics: [
-        "Real-world AI applications",
-        "Team skill development",
-        "ROI tracking",
-      ],
-    },
-    {
-      name: "Prof. Emma Thompson",
-      role: "Head of Digital Transformation",
-      university: "University of Birmingham",
-      rating: 5,
-      text: "AIDA provided exactly what we needed - practical, relevant AI training that bridges the gap between theory and real-world application. Our employee engagement and retention have notably improved.",
-      course: "AI FUNDAMENTALS FOR EMPLOYEES",
-      topics: [
-        "Practical AI integration",
-        "Change management",
-        "Ethics & security",
-        "Data AI strategy",
-      ],
+      text: (
+        <>
+          Honestly, we thought corporate machine learning training would be too theoretical for a product delivery team. AIDA made it practical from day one, and within <strong>6 weeks</strong> we had <strong>5 reusable notebooks</strong>, <strong>3 production ready analysis pipelines</strong>, and a <strong>28% reduction in reporting turnaround time</strong>. This is the first enterprise AI training program that actually changed our weekly execution, not just our vocabulary.
+        </>
+      ),
     },
   ];
 
@@ -61,13 +29,13 @@ export function Testimonials() {
             TESTIMONIALS
           </h2>
           <p className="text-lg sm:text-xl text-gray-600 max-w-3xl">
-            Hear from leading universities who have transformed
+            Hear from companies who have transformed
             their teams with AIDA's AI training programs.
           </p>
         </motion.div>
 
         {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 mb-16">
+        <div className="grid grid-cols-1 gap-6 sm:gap-8 mb-16 max-w-4xl mx-auto">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={index}
@@ -82,26 +50,6 @@ export function Testimonials() {
                 <Quote className="w-7 h-7 text-white" />
               </div>
 
-              {/* Course Title */}
-              <div className="mb-4">
-                <h3 className="text-sm font-bold text-cyan-400 tracking-wide mb-2">
-                  {testimonial.course}
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  {testimonial.topics.map((topic, idx) => (
-                    <span
-                      key={idx}
-                      className="text-xs text-gray-400 bg-white/5 px-2 py-1 rounded"
-                    >
-                      • {topic}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              {/* Divider */}
-              <div className="h-px bg-gradient-to-r from-cyan-500 to-purple-500 my-6"></div>
-
               {/* Rating */}
               <div className="flex gap-1 mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
@@ -113,20 +61,14 @@ export function Testimonials() {
               </div>
 
               {/* Testimonial Text */}
-              <p className="text-white/90 text-sm sm:text-base leading-relaxed mb-6">
-                "{testimonial.text}"
+              <p className="text-white/90 text-base sm:text-lg leading-relaxed mb-6">
+                {testimonial.text}
               </p>
 
-              {/* Author Info */}
+              {/* Company Info */}
               <div>
-                <div className="text-white font-semibold">
-                  {testimonial.name}
-                </div>
-                <div className="text-cyan-400 text-sm">
-                  {testimonial.role}
-                </div>
-                <div className="text-gray-400 text-sm">
-                  {testimonial.university}
+                <div className="text-white font-semibold text-lg">
+                  {testimonial.company}
                 </div>
               </div>
 

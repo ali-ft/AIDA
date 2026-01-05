@@ -16,7 +16,7 @@ export function Hero() {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <img
-          src={getAssetPath("assets/banner-hero-section.png")}
+          src={getAssetPath("assets/banner-hero-section-2.png")}
           alt="Corporate AI Training"
           className="w-full h-full object-cover"
         />

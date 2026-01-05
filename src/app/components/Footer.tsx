@@ -90,12 +90,12 @@ export function Footer() {
           {/* Social & Contact */}
           <div className="flex items-center gap-4">
             <a
-              href="mailto:info@aida-ai.com"
+              href="mailto:Hossein@aidaedu.ae"
               className="text-gray-400 hover:text-cyan-400 transition-colors flex items-center gap-2 text-sm"
             >
               <Mail className="w-4 h-4" />
               <span className="hidden sm:inline">
-                info@aida-ai.com
+                Hossein@aidaedu.ae
               </span>
             </a>
             <a
