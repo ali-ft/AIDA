@@ -1,4 +1,5 @@
 import { Hero } from "../components/Hero";
+import { TrustedPartners } from "../components/TrustedPartners";
 import { Challenge } from "../components/Challenge";
 import { Solution } from "../components/Solution";
 import { Benefits } from "../components/Benefits";
@@ -15,6 +16,7 @@ export function Home() {
     <>
       <div id="home">
         <Hero />
+        <TrustedPartners />
       </div>
 
       <div id="challenge">

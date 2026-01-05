@@ -237,7 +237,7 @@ export function CourseModules() {
                     }}
                   />
                   <div className={`absolute inset-0 bg-gradient-to-br ${module.color} opacity-60`}></div>
-                  
+
                   {/* Level Badge */}
                   <div className="absolute bottom-4 left-4">
                     <span className={`px-3 py-1 rounded-full text-xs font-medium ${levelColors[module.level as keyof typeof levelColors]}`}>

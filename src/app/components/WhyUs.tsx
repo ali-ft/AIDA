@@ -132,18 +132,18 @@ export function WhyUs() {
             Five reasons why leading organizations choose AIDA for their AI training needs
           </p>
         </motion.div>
-
+        
         {/* Cards Grid */}
         <div className="space-y-8">
           {/* Top Row - 3 Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {reasons.slice(0, 3).map((reason, index) => {
               return (
-                <motion.div
-                  key={index}
+            <motion.div
+              key={index}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
+              viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                   whileHover={{ y: -8 }}
                   className="relative group"
@@ -160,39 +160,39 @@ export function WhyUs() {
                           {reason.number}
                         </span>
                       </div>
-                    </div>
+              </div>
 
-                    {/* Content */}
+              {/* Content */}
                     <div className="relative z-10 pr-8">
                       <h3 className="text-xl sm:text-2xl font-bold mb-4 text-gray-900 leading-tight">
                         {reason.title}
-                      </h3>
+                </h3>
                       <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
                         {reason.description}
-                      </p>
+                </p>
                     </div>
 
                     {/* Bottom gradient accent */}
                     <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${reason.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
-                  </div>
-                </motion.div>
+              </div>
+            </motion.div>
               );
             })}
-          </div>
-
+        </div>
+        
           {/* Bottom Row - 2 Cards Centered */}
           <div className="flex flex-wrap justify-center gap-6 sm:gap-8">
             {reasons.slice(3, 5).map((reason, index) => {
               return (
-                <motion.div
+        <motion.div
                   key={index + 3}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
                   transition={{ delay: (index + 3) * 0.1 }}
                   whileHover={{ y: -8 }}
                   className="relative group w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] max-w-md"
-                >
+        >
                   <div className="relative bg-white/80 backdrop-blur-sm rounded-3xl p-6 sm:p-8 shadow-lg hover:shadow-2xl transition-all overflow-hidden border border-gray-200/50 h-full">
                     {/* Gradient overlay on hover */}
                     <div className={`absolute inset-0 bg-gradient-to-br ${reason.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300`}></div>
@@ -220,7 +220,7 @@ export function WhyUs() {
                     {/* Bottom gradient accent */}
                     <div className={`absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r ${reason.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
                   </div>
-                </motion.div>
+        </motion.div>
               );
             })}
           </div>
