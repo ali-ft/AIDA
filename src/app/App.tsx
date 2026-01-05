@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Toaster } from 'sonner';
 import { Navigation } from './components/Navigation';
 import { Footer } from './components/Footer';
 import { Home } from './pages/Home';
@@ -25,6 +26,7 @@ export default function App() {
         </div>
         
         <Footer />
+        <Toaster position="top-center" richColors />
       </div>
     </Router>
   );
