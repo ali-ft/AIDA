@@ -1,7 +1,6 @@
 import { motion } from "motion/react";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { useState, useEffect } from "react";
-import emailjs from '@emailjs/browser';
 import { toast } from 'sonner';
 
 export function Contact() {
@@ -22,19 +21,26 @@ export function Contact() {
     setIsSubmitting(true);
 
     try {
-      const serviceId = 'service_eqdvkje';
-      const templateId = 'template_blm88s5';
-      const publicKey = 'gMQTJZYfKQQ6wfed_';
+      const formEndpoint =
+        (import.meta as any).env?.VITE_FORMSPREE_ENDPOINT ||
+        'https://formspree.io/f/mykzqvwl';
 
-      const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
-        message: formData.message,
-        to_email: 'Hossein@aidaedu.ae',
-        reply_to: formData.email,
-      };
+      const res = await fetch(formEndpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        }),
+      });
 
-      await emailjs.send(serviceId, templateId, templateParams, publicKey);
+      if (!res.ok) {
+        throw new Error('Form submission failed');
+      }
 
       toast.success('Thank you for your message! We\'ll get back to you soon.', {
         duration: 5000,
