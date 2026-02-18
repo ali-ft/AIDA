@@ -60,6 +60,19 @@ export function Footer() {
               For Businesses
             </Link>
             <Link
+              to="/articles"
+              className="text-gray-400 hover:text-cyan-400 transition-colors"
+              onClick={() =>
+                window.scrollTo({
+                  top: 0,
+                  left: 0,
+                  behavior: "smooth",
+                })
+              }
+            >
+              Articles
+            </Link>
+            <Link
               to="/about"
               className="text-gray-400 hover:text-cyan-400 transition-colors"
               onClick={() =>
@@ -99,7 +112,9 @@ export function Footer() {
               </span>
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/in/hossein-rah-936535312/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-8 h-8 bg-white/10 hover:bg-gradient-to-r hover:from-cyan-600 hover:to-purple-600 rounded-lg flex items-center justify-center transition-all"
             >
               <Linkedin className="w-4 h-4" />

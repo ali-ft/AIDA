@@ -1,11 +1,17 @@
 import type React from 'react';
 
+export interface ArticleSection {
+  id: string;
+  title: string;
+}
+
 export interface Article {
   id: string;
   title: string;
   image: string;
   excerpt: string;
   content: React.ReactNode;
+  sections?: ArticleSection[];
 }
 
 export const articles: Article[] = [
@@ -17,52 +23,54 @@ export const articles: Article[] = [
     excerpt:
       'In the rapidly evolving landscape of modern commerce, staying competitive requires more than just adopting new tools; it necessitates a fundamental shift in organizational intelligence and capability...',
     content: (
-      <div className="text-base sm:text-lg leading-relaxed text-gray-700 space-y-6">
-        <p>
-          <span className="font-bold">
-            Elevate Your Enterprise with AIDA: The International Artificial Intelligence Training Center
-            for Future-Ready Leaders
-          </span>
-        </p>
+      <div className="text-base sm:text-lg leading-relaxed text-gray-700 space-y-6 text-justify">
+        <div id="section-introduction">
+          <p className="text-justify">
+            <span className="font-bold">
+              Elevate Your Enterprise with AIDA: The International Artificial Intelligence Training Center
+              for Future-Ready Leaders
+            </span>
+          </p>
 
-        <p>
-          In the rapidly evolving landscape of modern commerce, staying competitive requires more than
-          just adopting new tools; it necessitates a fundamental shift in organizational intelligence
-          and capability. AIDA Training Center, known internationally as the premier destination for
-          comprehensive AI education, is dedicated to bridging the gap between current business
-          operations and the limitless potential of artificial intelligence. We believe that empowering
-          your C-levels, managers, and employees with robust AI skills is no longer a luxury but a
-          strategic necessity for sustainable growth. Our meticulously designed programs are crafted to
-          demystify complex technologies, ensuring that every level of your workforce can harness AI to
-          drive innovation and efficiency. By choosing AIDA, your organization invests in a
-          future-proof foundation where technology and human expertise converge to create extraordinary
-          value. We invite businesses to partner with us and experience a transformative journey that
-          redefines what is possible in the digital age.
-        </p>
+          <p className="text-justify">
+            In the rapidly evolving landscape of modern commerce, staying competitive requires more than
+            just adopting new tools; it necessitates a fundamental shift in organizational intelligence
+            and capability. AIDA Training Center, known internationally as the premier destination for
+            comprehensive AI education, is dedicated to bridging the gap between current business
+            operations and the limitless potential of artificial intelligence. We believe that empowering
+            your C-levels, managers, and employees with robust AI skills is no longer a luxury but a
+            strategic necessity for sustainable growth. Our meticulously designed programs are crafted to
+            demystify complex technologies, ensuring that every level of your workforce can harness AI to
+            drive innovation and efficiency. By choosing AIDA, your organization invests in a
+            future-proof foundation where technology and human expertise converge to create extraordinary
+            value. We invite businesses to partner with us and experience a transformative journey that
+            redefines what is possible in the digital age.
+          </p>
 
-        <p>
-          Investing in AI training through AIDA offers a multitude of tangible benefits that directly
-          impact your bottom line and organizational health. One of the most immediate effects is a
-          surge in motivation; when C-levels and employees master cutting-edge AI concepts, they feel
-          revitalized and more deeply engaged with their work. Furthermore, providing these high-value
-          learning opportunities significantly boosts employee retention, as talented professionals are
-          far less likely to leave a company that actively invests in their long-term career growth and
-          technical relevance. Productivity also sees a dramatic rise as an AI-oriented mindset takes
-          hold, leading teams to automate repetitive tasks and utilize AI assistants for more informed
-          daily decision-making. Beyond efficiency, AI education fosters higher job satisfaction by
-          ensuring that your team never feels “left behind” by the rapid pace of technological
-          advancement. This continuous learning environment even creates a unique
-          <span className="font-bold"> “salary-educating trade-off”</span>, where the intrinsic value of
-          ongoing education enhances employee happiness and can indirectly balance compensation
-          expectations. Ultimately, AIDA’s training gives you a decisive winning card over competitors,
-          serving as a powerful magnet for new, highly skilled talent who prioritize innovative
-          workplaces.
-        </p>
+          <p className="text-justify">
+            Investing in AI training through AIDA offers a multitude of tangible benefits that directly
+            impact your bottom line and organizational health. One of the most immediate effects is a
+            surge in motivation; when C-levels and employees master cutting-edge AI concepts, they feel
+            revitalized and more deeply engaged with their work. Furthermore, providing these high-value
+            learning opportunities significantly boosts employee retention, as talented professionals are
+            far less likely to leave a company that actively invests in their long-term career growth and
+            technical relevance. Productivity also sees a dramatic rise as an AI-oriented mindset takes
+            hold, leading teams to automate repetitive tasks and utilize AI assistants for more informed
+            daily decision-making. Beyond efficiency, AI education fosters higher job satisfaction by
+            ensuring that your team never feels "left behind" by the rapid pace of technological
+            advancement. This continuous learning environment even creates a unique
+            <span className="font-bold"> "salary-educating trade-off"</span>, where the intrinsic value of
+            ongoing education enhances employee happiness and can indirectly balance compensation
+            expectations. Ultimately, AIDA's training gives you a decisive winning card over competitors,
+            serving as a powerful magnet for new, highly skilled talent who prioritize innovative
+            workplaces.
+          </p>
+        </div>
 
-        <h2 className="text-base sm:text-lg font-bold text-gray-900 pt-2">
-          Real-World Success: Empowering Dubai’s RTA Through Practical AI Training
+        <h2 id="section-rta-success" className="text-base sm:text-lg font-bold text-gray-900 pt-2">
+          Real-World Success: Empowering Dubai's RTA Through Practical AI Training
         </h2>
-        <p>
+        <p className="text-justify">
           A recent cornerstone of our international success was the AI training course conducted at the
           University of Birmingham, Dubai, specifically tailored for the Roads and Transport Authority
           (RTA). This intensive program was designed to move beyond theoretical abstractions and
@@ -77,11 +85,11 @@ export const articles: Article[] = [
           knowledge.
         </p>
 
-        <h2 className="text-base sm:text-lg font-bold text-gray-900 pt-2">
+        <h2 id="section-black-white-box" className="text-base sm:text-lg font-bold text-gray-900 pt-2">
           Mastering the Spectrum: Black-Box vs. White-Box Analysis
         </h2>
-        <p>
-          A central theme of the RTA training was the critical distinction between “Black-box” and
+        <p className="text-justify">
+          A central theme of the RTA training was the critical distinction between "Black-box" and
           “White-box” AI systems. In a Black-box scenario, the inner workings of the AI are obscured,
           and users do not know how the system arrives at its conclusions; while often powerful, this
           lack of transparency can be a hurdle for high-stakes decision-making. Conversely, White-box
@@ -91,16 +99,16 @@ export const articles: Article[] = [
           are often essential for regulatory compliance and safety-critical transport infrastructure.
         </p>
 
-        <h2 className="text-base sm:text-lg font-bold text-gray-900 pt-2">
+        <h2 id="section-10-tasks" className="text-base sm:text-lg font-bold text-gray-900 pt-2">
           10 Essential Tasks for AI Implementation in the RTA Domain
         </h2>
-        <p>
+        <p className="text-justify">
           To ensure the RTA could immediately apply their learning, we explored 10 specific tasks
           designed to make AI implementation fruitful and efficient:
         </p>
 
         <div className="space-y-4">
-          <p>
+          <p className="text-justify">
             <span className="font-bold">Task 1: Audience Analysis and Concern Mapping</span> This task
             involves using AI engines to analyze transcripts of stakeholder meetings to identify the
             most pressing concerns and expectations. By applying Natural Language Processing (NLP) and
@@ -112,7 +120,7 @@ export const articles: Article[] = [
             aligned with the actual needs of the workforce and the public.
           </p>
 
-          <p>
+          <p className="text-justify">
             <span className="font-bold">Task 2: Practical Dataset Generation</span> Accessing real-world
             datasets can often be restricted by privacy and security protocols, creating a bottleneck
             for training. This task focuses on using AI to generate high-fidelity, synthetic RTA-specific
@@ -123,7 +131,7 @@ export const articles: Article[] = [
             prototyping of AI solutions.
           </p>
 
-          <p>
+          <p className="text-justify">
             <span className="font-bold">Task 3: Individual Document Analysis and Summarization</span>{' '}
             RTA officials often deal with an overwhelming volume of documents, logs, and change
             requests that require rapid review. AI engines can be tasked with analyzing each document
@@ -134,7 +142,7 @@ export const articles: Article[] = [
             than manual reading.
           </p>
 
-          <p>
+          <p className="text-justify">
             <span className="font-bold">Task 4: Hierarchical Categorization and Labeling</span> Managing
             vast amounts of transport data requires a structured approach to classification to ensure
             information is easily retrievable. This task involves training AI models to apply
@@ -145,7 +153,7 @@ export const articles: Article[] = [
             precision.
           </p>
 
-          <p>
+          <p className="text-justify">
             <span className="font-bold">Task 5: Business Intelligence (BI) and KPI Measurement</span> AI
             should not just exist in a vacuum; it must drive the Key Performance Indicators (KPIs) of
             the business, such as those related to Metro, Tram, or Public Bus services. This task focuses
@@ -156,7 +164,7 @@ export const articles: Article[] = [
             only valuable if it empowers action.
           </p>
 
-          <p>
+          <p className="text-justify">
             <span className="font-bold">Task 6: Regulatory and Audit Cross-Checking</span> Ensuring that
             RTA documents and financial advice comply with local and international regulations is a
             massive undertaking. Task 6 utilizes AI to cross-check internal documents against
@@ -166,7 +174,7 @@ export const articles: Article[] = [
             of human error in legal and regulatory matters.
           </p>
 
-          <p>
+          <p className="text-justify">
             <span className="font-bold">Task 7: Network Analysis for Systemic Patterns</span>{' '}
             Transportation is inherently a network of nodes (stations, stops) and edges (routes). This
             task applies network analysis to link repeated incidents or issues to specific assets or
@@ -176,7 +184,7 @@ export const articles: Article[] = [
             maintenance and better urban planning.
           </p>
 
-          <p>
+          <p className="text-justify">
             <span className="font-bold">Task 8: Long-Term Strategy Alignment</span> For C-levels, AI must
             align with the company’s long-term business strategy rather than just solving tactical
             problems. This task involves using AI to generate and evaluate product lists and strategic
@@ -186,7 +194,7 @@ export const articles: Article[] = [
             impact of their current decisions.
           </p>
 
-          <p>
+          <p className="text-justify">
             <span className="font-bold">Task 9: Sensor Data and Outlier Analysis</span> Modern transport
             infrastructure is embedded with sensors that generate massive streams of data. This task
             focuses on generating sensor data for bridges or roads and applying AI-driven outlier
@@ -195,7 +203,7 @@ export const articles: Article[] = [
             can “hear” the silent warnings in sensor data that human operators might miss.
           </p>
 
-          <p>
+          <p className="text-justify">
             <span className="font-bold">Task 10: Model Training and Performance Evaluation</span> The
             final task involves the actual training and testing of AI models using the prepared
             datasets. This includes defining train and test sets and rigorously discussing why certain
@@ -206,10 +214,10 @@ export const articles: Article[] = [
           </p>
         </div>
 
-        <h2 className="text-base sm:text-lg font-bold text-gray-900 pt-2">
+        <h2 id="section-conclusion" className="text-base sm:text-lg font-bold text-gray-900 pt-2">
           Conclusion: Start Your Success Story with AIDA
         </h2>
-        <p>
+        <p className="text-justify">
           The journey of the RTA in Dubai is just one example of how AIDA Training Center transforms
           organizations through specialized AI education. By addressing the unique challenges of your
           domain—whether through network analysis, automated compliance, or strategic alignment—we
@@ -223,6 +231,13 @@ export const articles: Article[] = [
         </p>
       </div>
     ),
+    sections: [
+      { id: 'section-introduction', title: 'Introduction' },
+      { id: 'section-rta-success', title: 'Real-World Success: RTA Training' },
+      { id: 'section-black-white-box', title: 'Black-Box vs. White-Box Analysis' },
+      { id: 'section-10-tasks', title: '10 Essential Tasks' },
+      { id: 'section-conclusion', title: 'Conclusion' },
+    ],
   },
 ];
 

@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+import { motion } from 'motion/react';
 import { articles } from '../data/articles';
 
 const getAssetPath = (path: string) => {
@@ -7,24 +9,48 @@ const getAssetPath = (path: string) => {
 };
 
 export function Articles() {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
+
   return (
     <div className="min-h-screen bg-white">
       {/* Header Section - Different Background */}
       <div className="bg-gradient-to-br from-gray-50 to-gray-100 py-10 sm:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/70 border border-gray-200 text-xs font-semibold text-gray-700 mb-4">
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-center"
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.4, delay: 0.1 }}
+              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/70 border border-gray-200 text-xs font-semibold text-gray-700 mb-4"
+            >
               AIDA
               <span className="h-1 w-1 rounded-full bg-purple-400" />
               Knowledge Hub
-            </div>
-            <h1 className="text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-cyan-600 via-purple-600 to-purple-700 bg-clip-text text-transparent mb-3 tracking-tight">
+            </motion.div>
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-cyan-600 via-purple-600 to-purple-700 bg-clip-text text-transparent mb-3 tracking-tight"
+            >
               Articles &amp; Insights
-            </h1>
-            <p className="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto">
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto"
+            >
               Explore our latest insights and success stories in AI training and enterprise transformation
-            </p>
-          </div>
+            </motion.p>
+          </motion.div>
         </div>
       </div>
 
@@ -33,12 +59,18 @@ export function Articles() {
         <div className="max-w-7xl mx-auto">
           {/* Articles Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {articles.map((article) => (
-              <Link
+            {articles.map((article, index) => (
+              <motion.div
                 key={article.id}
-                to={`/articles/${article.id}`}
-                className="group bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-200 hover:border-purple-300"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 * index }}
+                whileHover={{ y: -5 }}
               >
+                <Link
+                  to={`/articles/${article.id}`}
+                  className="group bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-200 hover:border-purple-300 block"
+                >
                 {/* Article Image */}
                 <div className="relative h-48 overflow-hidden">
                   <img
@@ -75,6 +107,7 @@ export function Articles() {
                   </div>
                 </div>
               </Link>
+              </motion.div>
             ))}
           </div>
 
