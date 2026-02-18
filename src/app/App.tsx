@@ -6,6 +6,8 @@ import { Home } from './pages/Home';
 import { ForBusinesses } from './pages/ForBusinesses';
 import { AboutUs } from './pages/AboutUs';
 import { Contact } from './pages/Contact';
+import { Articles } from './pages/Articles';
+import { ArticleDetail } from './pages/ArticleDetail';
 
 // Get base path from environment variable or use root
 const basePath = (import.meta as any).env?.BASE_URL || '/';
@@ -22,6 +24,8 @@ export default function App() {
             <Route path="/businesses" element={<ForBusinesses />} />
             <Route path="/about" element={<AboutUs />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/articles" element={<Articles />} />
+            <Route path="/articles/:id" element={<ArticleDetail />} />
           </Routes>
         </div>
         

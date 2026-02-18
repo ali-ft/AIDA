@@ -87,14 +87,14 @@ export function Contact() {
     },
     {
       icon: Phone,
-      title: "Phone",
+      title: "Mobile",
       value: "+971 50 563 2446",
       link: "tel:+971505632446"
     },
     {
       icon: MapPin,
       title: "Address",
-      value: "Dubai, UAE",
+      value: "AIDA AI Research (FZE), Block B – B54-102, SRTIP Free Zone, Sharjah, UAE",
       link: null
     }
   ];
@@ -329,7 +329,7 @@ export function Contact() {
               Visit Our Office
             </h2>
             <p className="text-xl text-white/90 mb-8">
-              We're located in the heart of Dubai, UAE
+              AIDA AI Research (FZE), Block B – B54-102, SRTIP Free Zone, Sharjah, UAE
             </p>
             <div className="bg-white/10 backdrop-blur-sm p-8 rounded-3xl max-w-2xl mx-auto">
               <p className="text-white text-lg mb-4">

@@ -13,6 +13,7 @@ export function Navigation() {
 
   const navItems = [
     { label: "For Businesses", path: "/businesses" },
+    { label: "Articles", path: "/articles" },
     { label: "About Us", path: "/about" },
     { label: "Contact", path: "/contact" },
   ];
