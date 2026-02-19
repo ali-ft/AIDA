@@ -1,8 +1,9 @@
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useEffect, useState, useRef, useMemo } from 'react';
 import { motion } from 'motion/react';
 import { articles } from '../data/articles';
 import { ArrowLeft } from 'lucide-react';
+import { SeoHead } from '../components/SeoHead';
 
 const getAssetPath = (path: string) => {
   const baseUrl = (import.meta as any).env?.BASE_URL || '/';
@@ -66,17 +67,26 @@ function useActiveSection(sections: { id: string; title: string }[] = []) {
 }
 
 export function ArticleDetail() {
-  const { id } = useParams<{ id: string }>();
-  const article = articles.find((a) => a.id === id);
+  const { slug } = useParams<{ slug: string }>();
+  const navigate = useNavigate();
+  const article = articles.find((a) => a.slug === slug) ?? articles.find((a) => a.id === slug);
   const activeSection = useActiveSection(article?.sections);
+
+  // Redirect old /articles/1 URLs to new slug-based URLs
+  useEffect(() => {
+    if (article && slug !== article.slug) {
+      navigate(`/articles/${article.slug}`, { replace: true });
+    }
+  }, [article, slug, navigate]);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, [id]);
+  }, [slug]);
 
   if (!article) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4">
+        <SeoHead title="Article Not Found | AIDA" noindex />
         <div className="text-center">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Article Not Found</h1>
           <p className="text-gray-600 mb-8">The article you're looking for doesn't exist.</p>
@@ -94,6 +104,18 @@ export function ArticleDetail() {
 
   return (
     <div className="min-h-screen bg-white">
+      <SeoHead
+        title={`${article.title} | AIDA AI Training`}
+        description={article.excerpt}
+        keywords="AI training, enterprise AI, AIDA, Dubai RTA, AI implementation, machine learning"
+        url={`/articles/${article.slug}`}
+        image={article.image}
+        type="article"
+        article={{
+          section: 'AI Training',
+          tags: ['AI training', 'enterprise AI', 'AIDA'],
+        }}
+      />
       {/* Header Section with Image and Title - Different Background */}
       <div className="bg-gradient-to-br from-gray-50 to-gray-100 py-8 md:py-12 mb-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

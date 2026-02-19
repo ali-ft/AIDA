@@ -7,6 +7,7 @@ export interface ArticleSection {
 
 export interface Article {
   id: string;
+  slug: string;
   title: string;
   image: string;
   excerpt: string;
@@ -17,6 +18,7 @@ export interface Article {
 export const articles: Article[] = [
   {
     id: '1',
+    slug: 'elevate-enterprise-aida-ai-training-future-ready-leaders',
     title:
       'Elevate Your Enterprise with AIDA: The International Artificial Intelligence Training Center for Future-Ready Leaders',
     image: '/assets/article1.jpg',

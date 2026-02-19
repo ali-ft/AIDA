@@ -2,6 +2,7 @@ import { motion } from "motion/react";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { useState, useEffect } from "react";
 import { toast } from 'sonner';
+import { SeoHead } from "../components/SeoHead";
 
 export function Contact() {
   useEffect(() => {
@@ -101,6 +102,12 @@ export function Contact() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-cyan-50/30 to-purple-50/50 pt-16 sm:pt-20 relative overflow-hidden">
+      <SeoHead
+        title="Contact Us | AIDA AI Training Center"
+        description="Contact AIDA AI Training Center. AIDA AI Research (FZE), Block B – B54-102, SRTIP Free Zone, Sharjah, UAE. Phone: +971 50 563 2446"
+        keywords="contact AIDA, AIDA AI training contact, Dubai AI training, Sharjah UAE, AIDA edu"
+        url="/contact"
+      />
       {/* Enhanced Background with Mesh Gradient */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Animated Gradient Orbs */}

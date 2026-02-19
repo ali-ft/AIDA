@@ -2,6 +2,7 @@ import { motion } from "motion/react";
 import { Building2, Users, TrendingUp, Target, CheckCircle, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
+import { SeoHead } from "../components/SeoHead";
 
 export function ForBusinesses() {
   useEffect(() => {
@@ -42,6 +43,12 @@ export function ForBusinesses() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50">
+      <SeoHead
+        title="For Businesses | AIDA AI Training - Enterprise AI Solutions"
+        description="Transform your organization with AIDA's enterprise AI training. Custom programs for C-levels, managers, and employees. Upskill your workforce with cutting-edge AI education."
+        keywords="enterprise AI training, business AI solutions, corporate AI education, workforce AI upskilling, C-level AI training, Dubai AI training for businesses"
+        url="/businesses"
+      />
       {/* Hero Section */}
       <section className="relative py-12 sm:py-16 lg:py-20 overflow-hidden">
         <div className="absolute inset-0">

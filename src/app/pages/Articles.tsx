@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import { motion } from 'motion/react';
 import { articles } from '../data/articles';
+import { SeoHead } from '../components/SeoHead';
 
 const getAssetPath = (path: string) => {
   const baseUrl = (import.meta as any).env?.BASE_URL || '/';
@@ -15,6 +16,12 @@ export function Articles() {
 
   return (
     <div className="min-h-screen bg-white">
+      <SeoHead
+        title="Articles & Insights | AIDA AI Training Center"
+        description="Explore AIDA's latest insights and success stories in AI training and enterprise transformation. Real-world case studies and practical AI implementation guides."
+        keywords="AI training articles, AI insights, enterprise AI, RTA Dubai AI training, AI implementation"
+        url="/articles"
+      />
       {/* Header Section - Different Background */}
       <div className="bg-gradient-to-br from-gray-50 to-gray-100 py-10 sm:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -68,7 +75,7 @@ export function Articles() {
                 whileHover={{ y: -5 }}
               >
                 <Link
-                  to={`/articles/${article.id}`}
+                  to={`/articles/${article.slug}`}
                   className="group bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-200 hover:border-purple-300 block"
                 >
                 {/* Article Image */}

@@ -10,10 +10,18 @@ import { Testimonials } from "../components/Testimonials";
 import { CourseModules } from "../components/CourseModules";
 import { Pricing } from "../components/Pricing";
 import { FAQ } from "../components/FAQ";
+import { SeoHead } from "../components/SeoHead";
 
 export function Home() {
   return (
     <>
+      <SeoHead
+        title="AIDA - International AI Training Center | Enterprise AI Education"
+        description="AIDA Training Center: Premier destination for comprehensive AI education. Empower your C-levels, managers, and employees with robust AI skills for sustainable growth. Transform your organization with cutting-edge AI training."
+        keywords="AI training, artificial intelligence, machine learning, enterprise AI, AI education, Dubai AI training, UAE AI courses, C-level AI training, workforce AI skills, AIDA"
+        url="/"
+        image="/assets/hero-section-new.png"
+      />
       <div id="home">
         <Hero />
       </div>

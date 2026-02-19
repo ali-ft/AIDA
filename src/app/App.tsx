@@ -48,7 +48,7 @@ export default function App() {
             <Route path="/about" element={<AboutUs />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/articles" element={<Articles />} />
-            <Route path="/articles/:id" element={<ArticleDetail />} />
+            <Route path="/articles/:slug" element={<ArticleDetail />} />
           </Routes>
         </div>
         
